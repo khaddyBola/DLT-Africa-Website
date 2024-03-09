@@ -41,8 +41,6 @@ To run the website locally or contribute to the development, follow these steps:
 3. **Navigate to the project directory**:
 
 cd DLT-Africa-website
-Open the index.html file in your preferred web browser to view the website locally.
-
 Make changes or enhancements as needed, and submit a pull request if you'd like to contribute to the project.
 
 ## **Contributing**

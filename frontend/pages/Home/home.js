@@ -1,7 +1,10 @@
+import IndexHome from "../../components/HomaPage/home"
 
 const Home = () => {
   return (
-    <div>home</div>
+    <div>
+      <IndexHome/>
+    </div>
   )
 }
 

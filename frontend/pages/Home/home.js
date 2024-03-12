@@ -1,4 +1,4 @@
-import IndexHome from "../../components/HomaPage/home"
+import IndexHome from "../../components/HomePage/Home"
 
 const Home = () => {
   return (

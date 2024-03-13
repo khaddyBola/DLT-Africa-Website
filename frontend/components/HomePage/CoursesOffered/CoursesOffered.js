@@ -1,7 +1,8 @@
+import React from 'react'
 
 const CoursesOffered = () => {
   return (
-    <div>Courses we Offer</div>
+    <div>Courses we offer</div>
   )
 }
 

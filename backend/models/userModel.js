@@ -9,19 +9,19 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    dob: {
+    DOB: {
         type: Date,
         required: true
     },
 
-    academicQualification: {
+    academicQual: {
         type: String,
         required: true
     },
 
     courseSelected: {
         type: String,
-        required: true
+        required: true,
     },
 
     classType: {

@@ -4,10 +4,36 @@ const Cryptr = require("cryptr");
 const User = require("../models/userModel");
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password } = req.body;
+  const {
+    firstName,
+    lastName,
+    DOB,
+    academicQual,
+    courseSelected,
+    classType,
+    stateOfOrigin,
+    gender,
+    emailAddress,
+    password,
+    codeExperience,
+    stateOfResidence,
+  } = req.body;
 
   // Validation
-  if (!name || !email || !password) {
+  if (
+    !firstName ||
+    !lastName ||
+    !DOB ||
+    !academicQual ||
+    !courseSelected ||
+    !classType ||
+    !stateOfOrigin ||
+    !gender ||
+    !emailAddress ||
+    !password ||
+    !codeExperience ||
+    !stateOfResidence
+  ) {
     res.status(400);
     throw new Error("Please fill in all the required fields.");
   }
@@ -25,29 +51,53 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("Email already in use.");
   }
 
-
   //   Create new user
   const user = await User.create({
-    name,
-    email,
+    firstName,
+    lastName,
+    DOB,
+    academicQual,
+    courseSelected,
+    classType,
+    stateOfOrigin,
+    gender,
+    emailAddress,
     password,
-    userAgent,
+    codeExperience,
+    stateOfResidence,
   });
 
-
   if (user) {
-    const { _id, name, email, phone, bio, photo, role, isVerified } = user;
+    const {
+      _id,
+      firstName,
+      lastName,
+      DOB,
+      academicQual,
+      courseSelected,
+      classType,
+      stateOfOrigin,
+      gender,
+      emailAddress,
+      password,
+      codeExperience,
+      stateOfResidence,
+    } = user;
 
     res.status(201).json({
       _id,
-      name,
-      email,
-      phone,
-      bio,
-      photo,
-      role,
-      isVerified,
-      token,
+      firstName,
+      lastName,
+      DOB,
+      academicQual,
+      courseSelected,
+      classType,
+      stateOfOrigin,
+      gender,
+      emailAddress,
+      password,
+      codeExperience,
+      stateOfResidence,
     });
   } else {
     res.status(400);

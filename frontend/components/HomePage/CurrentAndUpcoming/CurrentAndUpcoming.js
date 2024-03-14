@@ -4,7 +4,7 @@ const CurrentAndUpcoming = () => {
   return (
     <div className="container mx-auto w-full max-w-[1440px] h-[745px] px-4">
       <h1 className="text-center text-6xl tracking-wide mb-12">
-        Current and Upcoming Programmmes
+        Current and Upcoming Programmmes.
       </h1>
 
       <div className="flex justify-center gap-[40px]">

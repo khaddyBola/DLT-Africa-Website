@@ -1,57 +1,18 @@
-import { FaCheckCircle } from "react-icons/fa";
 import Link from "next/link";
-
 const CourseSection = (props) => {
   return (
     <>
-      <section className="bg-[#F6F7F6] py-8">
-        <div className="container mx-auto flex flex-col lg:flex-row">
-          <div className="w-full lg:w-1/2">
-            <div className="px-4 lg:px-[50px]">
-              <h4 className="text-3xl w-full lg:w-[275px] font-serif font-bold mb-4">
-                {props.title}
-              </h4>
-              {props.text && (
-                <p className="text-[#1C1C1C] mb-4 text-[20px] font-poppins font-normal leading-[120%] text-opacity-[0.75] lg:text-[20px] lg:w-[584px]">
-                  {props.text}
-                </p>
-              )}
-              {props.headline1 && (
-                <div className="flex text-[#1C1C1C] mb-4 text-[14px] font-poppins font-normal leading-[120%] text-opacity-[0.75] lg:w-[375px]">
-                  <p>
-                    {props.showCheckbox && (
-                      <FaCheckCircle className="inline-block  mr-2 w-[16px] h-[16px] font-poppins font-normal " />
-                    )}{" "}
-                    {/* Conditionally render checkbox icon */}
-                  </p>
-                  {props.headline1}
-                </div>
-              )}
+      <section>
+        <div>
+          <div>
+            <h4>{props.title}</h4>
+            <p>{props.text}</p>
 
-              {props.headline2 && (
-                <div className="flex text-[#1C1C1C] mb-4 text-[14px] font-poppins font-normal leading-[120%] text-opacity-[0.75] lg:text-[14px] lg:w-[275px]">
-                  <p>
-                    {props.showCheckbox && (
-                      <FaCheckCircle className="inline-block mr-2 w-[16px] h-[16px]" />
-                    )}{" "}
-                    {/* Conditionally render checkbox icon */}
-                  </p> 
-                  {props.headline2}
-                </div>
-              )}
+            <div>
+              {/* <Link>Apply Now</Link> */}
 
-              {props.headline3 && (
-                <div className="flex text-[#1C1C1C] mb-4 text-[14px] font-poppins font-normal leading-[120%] text-opacity-[0.75] lg:text-[14px] lg:w-[275px]">
-                  <p>
-                    {" "}
-                    {props.showCheckbox && (
-                      <FaCheckCircle className="inline-block mr-2 w-[16px] h-[16px]" />
-                    )}{" "}
-                    {/* Conditionally render checkbox icon */}
-                  </p>
-                  {props.headline3}
-                </div>
-              )}
+
+              <button>{props.button2}</button>
 
               <div className="flex flex-col lg:flex-row gap-4 py-4 lg:py-[36px]">
                 <Link href="/training" legacyBehavior={true}>
@@ -66,15 +27,12 @@ const CourseSection = (props) => {
                 </Link>
               </div>
               <p className="text-gray-700">{props.headline}</p>
+
             </div>
+            <p>{props.headline}</p>
           </div>
 
-          <div className="w-full lg:w-[673px] h-[448px] pt-4 lg:pt-[88px] pb-4 lg:pb-[19px] pl-4 lg:pl-[83px] pr-4 lg:pr-[50px]">
-            <img
-              className="object-cover h-full w-full rounded-[20px]"
-              src={props.img}
-            />
-          </div>
+          <div>{/* <img src={props.img} alt={props.title} /> */}</div>
         </div>
       </section>
     </>

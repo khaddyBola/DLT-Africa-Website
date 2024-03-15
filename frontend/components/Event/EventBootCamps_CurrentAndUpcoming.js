@@ -5,7 +5,7 @@ const EventBootCamps_CurrentAndUpcoming = () => {
         <div>
           <h2 className="text-[48px] font-[400]   ">Bootcamps</h2>
           <h4 className="text-[20px] font-[400]  w-[529px]  ">
-            Learn, build and showcase your skills alongside like-minded peers.
+            Learn, build and showcase your skills alongside like-minded peers. 
           </h4>
         </div>
         <div>

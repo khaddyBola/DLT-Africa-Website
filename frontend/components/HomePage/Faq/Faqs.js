@@ -1,11 +1,11 @@
-import React from "react";
-import FAQ from "./Faq";
+import Faq from "../../HomePage/Faq/Faq";
 
 const Faqs = () => {
   const faqOne = [
     {
       id: 1,
-      question: "What are the requirements to join the software development training ?",
+      question:
+        "What are the requirements to join the software development training ?",
       answer:
         "Anyone with burnig passion to build solution that solve real world use cases are eligible to join. We appreciate people who already have idea of what they are looking to build but we encourage everyone to apply.",
     },
@@ -14,7 +14,8 @@ const Faqs = () => {
   const faqTwo = [
     {
       id: 1,
-      question: "What kind of company can participate in the incubation program ?",
+      question:
+        "What kind of company can participate in the incubation program ?",
       answer:
         "There are no restrictions on companies that can participate. Existing projects and new builders who wish to develop an inpact-driven projects using Web3 can apply.",
     },
@@ -72,8 +73,10 @@ const Faqs = () => {
       <div className="text-center mb-10 -m-20">
         <h1 className="text-4xl mb-5">Frequently asked questions</h1>
         <p className="text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasell <br/>
-          lorem. Nam vehicula commodo malesuada. Cras tempus metus id lorem<br/>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasell{" "}
+          <br />
+          lorem. Nam vehicula commodo malesuada. Cras tempus metus id lorem
+          <br />
           vulputate pellentesque eros et, elementum magna. Aenean convallis
           lobortis ipsum, non me lorem.
         </p>
@@ -81,37 +84,37 @@ const Faqs = () => {
 
       <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
         {faqOne.map(({ question, answer, id }) => (
-          <FAQ key={id} question={question} answer={answer} />
+          <Faq key={id} question={question} answer={answer} />
         ))}
       </div>
 
       <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
         {faqTwo.map(({ question, answer, id }) => (
-          <FAQ key={id} question={question} answer={answer} />
+          <Faq key={id} question={question} answer={answer} />
         ))}
       </div>
 
       <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
         {faqThree.map(({ question, answer, id }) => (
-          <FAQ key={id} question={question} answer={answer} />
+          <Faq key={id} question={question} answer={answer} />
         ))}
       </div>
 
       <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
         {faqFour.map(({ question, answer, id }) => (
-          <FAQ key={id} question={question} answer={answer} />
+          <Faq key={id} question={question} answer={answer} />
         ))}
       </div>
 
       <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
         {faqFive.map(({ question, answer, id }) => (
-          <FAQ key={id} question={question} answer={answer} />
+          <Faq key={id} question={question} answer={answer} />
         ))}
       </div>
 
       <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
         {faqSix.map(({ question, answer, id }) => (
-          <FAQ key={id} question={question} answer={answer} />
+          <Faq key={id} question={question} answer={answer} />
         ))}
       </div>
     </section>

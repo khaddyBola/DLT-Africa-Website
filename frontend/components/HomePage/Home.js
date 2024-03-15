@@ -14,7 +14,7 @@ const IndexHome = () => {
       <RegisterOnline />
       <CoursesOffered />
       <JoinHackerHouse />
-      <Faqs/>
+      <Faqs />
       <CurrentAndUpcoming />
       <RegisterOffline />
     </div>

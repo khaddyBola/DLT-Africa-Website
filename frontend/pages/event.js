@@ -4,6 +4,7 @@ import EventHero from "../components/Event/EventHero";
 import EventIncubator_CurrentAndUpcoming from "../components/Event/EventIncubator_CurrentAndUpcoming";
 import EventPastEventSection from "../components/Event/EventPastEventSection";
 
+
 const event = () => {
   return (
     <div className='bg-[#F6F6F6]'>

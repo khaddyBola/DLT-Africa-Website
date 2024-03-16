@@ -89,5 +89,5 @@ const CoursesOffered = () => {
   );
 };
 
-export default CoursesOffered;
 
+export default CoursesOffered

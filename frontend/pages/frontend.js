@@ -6,7 +6,7 @@ import FrontendIconSection from "../components/Courses/Frontend/FrontendIconSect
 const frontend = () => {
   return (
     <div>
-      <FrontEndHero />
+      {/* <FrontEndHero /> */}
      <FrontendIconSection />
     </div>
   );

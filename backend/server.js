@@ -10,6 +10,8 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+app.use("/event", express.static("storage/images"));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -32,13 +34,6 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 connectDB();
-
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => {
-//     app.listen(PORT, console.log(`Server up and running on port ${PORT}`));
-//   })
-//   .catch((err) => console.log(err));
 
 mongoose.connection.once("open", () => {
     console.log("Connected to MongoDB");

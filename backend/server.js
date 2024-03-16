@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const userRoute = require("./routes/userRoute");
 
 const app = express();
 
@@ -19,6 +20,12 @@ app.use(
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
+
+app.use("/api/cohorts", userRoute);
+
+app.get("/", (req, res) => {
+  res.send("Home Page");
+});
 
 const PORT = process.env.PORT || 5000;
 

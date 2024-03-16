@@ -3,6 +3,7 @@ import Linkedin from '../../public/images/linkedin.svg';
 import Twitter from '../../public/images/twitter.svg';
 import Image from 'next/image'
 
+
 const teamMember = [
     {
         id: 1,
@@ -90,7 +91,7 @@ const team = () => {
                 font-[normal] 
                 leading-[120%] 
                 tracking-[2.52px]'
-                >Meet the Team
+            >   Meet the Team
             </div>
 
             <div className='grid 

@@ -1,8 +1,8 @@
-
 const HackerHouseBuild = () => {
-  return (
-    <div>HackerHouseBuild</div>
-  )
-}
+  return <>
 
-export default HackerHouseBuild
+  
+  </>;
+};
+
+export default HackerHouseBuild;

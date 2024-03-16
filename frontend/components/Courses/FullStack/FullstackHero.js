@@ -1,37 +1,28 @@
 import CourseSection from "../CoursesHero/CourseHeroSec";
 
+
 const sectionData = [
   {
-    id: 3,
-    title: "Frontend Web Development",
-    text: "Acquire the skills and knowledge needed build a complete web development project from scratch to finish. Our Full-Stack Developer’s Program is a 6 months program.",
-    button1: "Apply Now",
-    button2: "Speak To A Learning Advisor",
-    headline: "Applications are currently Open!",
-    // img: require("../../assets/FrontendHero.png"),
+    id: 1,
+    title: "Full Stack Web Development",
+    text: "Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+    headline1: "Graduate in six months, part-time, and start working in the high-demand field of software development.",
+    headline2: "Meet regularly with an experienced mentor to ask the questions you care about.",
+    headline3: "Build your coding skills and launch your software engineering career",
+    button1: "Register for Offline",
+    button2: "Register for Online",
+    img: "/images/front-end-hero.png", 
   },
 ];
 
-const FullStackHero= () => {
+const FullStackHero = () => {
   return (
     <section className="course" id="course">
-      <>
-        <div>
-          {sectionData.map(
-            ({ title, text, button1, button2, headline, id, img }) => (
-              <CourseSection
-                key={id}
-                title={title}
-                text={text}
-                // button1={button1}
-                button2={button2}
-                headline={headline}
-                // img={img}
-              />
-            )
-          )}
-        </div>
-      </>
+      <div>
+        {sectionData.map(({ id, ...rest }) => (
+          <CourseSection key={id} {...rest} showCheckbox={true} />
+        ))}
+      </div>
     </section>
   );
 };

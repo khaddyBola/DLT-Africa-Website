@@ -142,3 +142,4 @@ function sendEmail(firstName, courseSelected, emailAddress, user) {
 }
 
 module.exports = registerUser;
+

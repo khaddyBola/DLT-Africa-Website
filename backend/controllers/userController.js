@@ -64,7 +64,7 @@ const registerUser = asyncHandler(async (req, res) => {
   if (user) {
     // send mail message if the user has been created
     sendEmail(firstName, courseSelected, emailAddress, user);
-    
+
     // Respond with user data
     const {
       _id,
@@ -72,12 +72,12 @@ const registerUser = asyncHandler(async (req, res) => {
       lastName,
       DOB,
       academicQual,
-      courseSelected,
+      courseSelected: userCourseSelected,
       classType,
       stateOfOrigin,
       gender,
       phoneNo,
-      emailAddress,
+      emailAddress : userEmailAddress,
       codeExperience,
       stateOfResidence,
     } = user;
@@ -88,16 +88,15 @@ const registerUser = asyncHandler(async (req, res) => {
       lastName,
       DOB,
       academicQual,
-      courseSelected,
+      courseSelected: userCourseSelected,
       classType,
       stateOfOrigin,
       gender,
       phoneNo,
-      emailAddress,
+      emailAddress : userEmailAddress,
       codeExperience,
       stateOfResidence,
     });
-
   } else {
     res.status(400);
     throw new Error("Invalid data");

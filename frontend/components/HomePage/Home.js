@@ -1,6 +1,6 @@
 import CoursesOffered from "./CoursesOffered/CoursesOffered";
 import CurrentAndUpcoming from "./CurrentAndUpcoming/CurrentAndUpcoming";
-import Faq from "./Faq/Faq";
+import Faqs from "./Faq/Faqs";
 import HeroSection from "./HeroSection/HeroSection";
 import JoinHackerHouse from "./JoinHackerHouse/JoinHackerHouse";
 import { RegisterOffline, RegisterOnline } from "./Register/Register";
@@ -14,7 +14,7 @@ const IndexHome = () => {
       <RegisterOnline />
       <CoursesOffered />
       <JoinHackerHouse />
-      <Faq />
+      <Faqs/>
       <CurrentAndUpcoming />
       <RegisterOffline />
     </div>

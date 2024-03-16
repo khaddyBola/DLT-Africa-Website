@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 
-const FAQ = ({ question, answer }) => {
+const Faq = ({ question, answer }) => {
 
   const [isFaqShowing, setIsFaqShowing] = useState(false);
 
@@ -27,4 +27,4 @@ const FAQ = ({ question, answer }) => {
   );
 };
 
-export default FAQ;
+export default Faq;

@@ -58,7 +58,7 @@ click on fork button, uncheck the checkbox, then click on create fork.
     git remote add upstream https://github.com/DLT-Africa/DLT-Africa-Website.git
     git remote -v 
     git checkout -b name of the issue you're picking [this will switch to a new branch bearing the name of the issue]
-    git pull upstream main
+    git pull upstream staging
     code .
 
 

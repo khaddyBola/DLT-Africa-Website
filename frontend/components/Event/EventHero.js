@@ -1,3 +1,5 @@
+import React from "react";
+
 const EventHero = () => {
   return (
     <div className="flex justify-center items-center bg-[#F6F7F6] mb-[50px]">
@@ -21,3 +23,4 @@ const EventHero = () => {
 };
 
 export default EventHero;
+

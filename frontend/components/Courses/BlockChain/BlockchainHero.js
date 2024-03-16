@@ -27,4 +27,8 @@ const BlockChainHero = () => {
   );
 };
 
+<<<<<<< HEAD
 export default BlockChainHero;
+=======
+export default BlockChainHero;
+>>>>>>> 7afcb9c32c222a58cc4e11af0f33856e946e8cba

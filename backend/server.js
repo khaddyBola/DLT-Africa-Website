@@ -23,7 +23,7 @@ app.use(
     })
 );
 
-app.use("/api/cohorts", userRoute);
+// app.use("/api/cohorts", userRoute); // giving errors cos the user routes file is temporarily empty
 
 app.get("/", (req, res) => {
     res.send("Home Page");

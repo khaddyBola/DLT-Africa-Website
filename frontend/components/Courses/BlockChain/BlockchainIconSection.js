@@ -58,7 +58,7 @@ const secData = [
   {
     id: 5,
     title: "Prerequisites",
-    text: "All you'll needing for our program is a laptop and an open mind",
+    text: "All you'll needing for our program 1s a laptop and an open mind",
     icon: <BsListUl />, 
     courseConClass: "py-2 px-30 flex flex-row items-center justify-center", // Different class for the second item
     iconBodyClass: " p-6 w-[229px] h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex sm:w-[180px] h-[200px] p-1",

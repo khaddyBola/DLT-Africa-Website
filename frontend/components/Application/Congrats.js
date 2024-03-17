@@ -9,7 +9,7 @@ const Congrats = () => {
           </h1>
           <div>
             <p className="w-[796px] h-[48px] opacity-75%">
-              Your application has successfully been submitted, you’ll get an email from our<br/> team on your next step of action.
+              Your application has successfully been submitted, you&apos;ll get an email from our<br/> team on your next step of action.
             </p>
           </div>
           <div className="absolute left-[88px] top-[444px]">

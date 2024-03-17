@@ -25,10 +25,10 @@ app.use(
     })
 );
 
-// app.use("/api/cohorts", userRoute); // giving errors cos the user routes file is temporarily empty
+app.use("/api/cohorts", userRoute);
 
 app.get("/", (req, res) => {
-    res.send("Home Page");
+  res.send("Home Page");
 });
 
 const PORT = process.env.PORT || 5000;

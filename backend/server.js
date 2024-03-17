@@ -10,6 +10,8 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+app.use("/event", express.static("storage/images"));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -23,22 +25,15 @@ app.use(
     })
 );
 
-// app.use("/api/cohorts", userRoute); // giving errors cos the user routes file is temporarily empty
+app.use("/api/cohorts", userRoute);
 
 app.get("/", (req, res) => {
-    res.send("Home Page");
+  res.send("Home Page");
 });
 
 const PORT = process.env.PORT || 5000;
 
 connectDB();
-
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => {
-//     app.listen(PORT, console.log(`Server up and running on port ${PORT}`));
-//   })
-//   .catch((err) => console.log(err));
 
 mongoose.connection.once("open", () => {
     console.log("Connected to MongoDB");

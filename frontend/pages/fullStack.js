@@ -1,16 +1,17 @@
-import React from "react";
-import FullstackIconSection from "../components/Courses/FullStack/FullstackIconSection";
-import FullstackDetail from "../components/Courses/FullStack/FullstackDetail";
+import FullstackDetail from "../components/Courses/Fullstack/FullstackDetail";
 import FullStackHero from "../components/Courses/FullStack/FullstackHero";
+import FullstackIconSection from "../components/Courses/Fullstack/FullstackIconSection";
 
-const fullStack = () => {
+const fullstack = () => {
   return (
     <div>
       <FullStackHero />
-      <FullstackIconSection />
-      <FullstackDetail />
+      <FullstackIconSection/>
+      <FullstackDetail/>
     </div>
   );
 };
 
-export default fullStack;
+export default fullstack;
+
+

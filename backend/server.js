@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const userRoute = require("./routes/userRoute");
 const mongoose = require("mongoose");
+const userRoute = require("./routes/userRoute");
 
 const app = express();
 
@@ -25,12 +26,6 @@ app.use(
     })
 );
 
-// app.use("/api/cohorts", userRoute); // giving errors cos the user routes file is temporarily empty
-
-app.get("/", (req, res) => {
-    res.send("Home Page");
-});
-
 const PORT = process.env.PORT || 5000;
 
 connectDB();
@@ -38,4 +33,5 @@ connectDB();
 mongoose.connection.once("open", () => {
     console.log("Connected to MongoDB");
     app.listen(PORT, console.log(`Server up and running on port ${PORT}`));
-});
+  })
+  .catch((err) => console.log(err));

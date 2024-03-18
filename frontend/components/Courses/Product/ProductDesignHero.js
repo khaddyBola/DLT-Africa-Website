@@ -11,7 +11,7 @@ const sectionData = [
     headline3: "Build your coding skills and launch your software engineering career",
     button1: "Register for Offline",
     button2: "Register for Online",
-    img: "/images/product-design.png", 
+    img: "/images/front-end-hero.png", 
   },
 ];
 

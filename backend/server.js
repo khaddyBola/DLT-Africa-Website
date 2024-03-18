@@ -1,14 +1,19 @@
 require("dotenv").config();
 
+const path = require("path");
 const express = require("express");
 const connectDB = require("./config/DBconnect");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const userRoute = require("./routes/userRoute");
+const eventRoute = require("./routes/eventRoute");
 const mongoose = require("mongoose");
 
 const app = express();
+
+//serve static files
+app.use("/", express.static(path.join(__dirname, "/public")));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,7 +28,8 @@ app.use(
     })
 );
 
-// app.use("/api/cohorts", userRoute); // giving errors cos the user routes file is temporarily empty
+// app.use("/api/v1/cohorts", userRoute);
+app.use("/api/v1/events", eventRoute);
 
 app.get("/", (req, res) => {
     res.send("Home Page");
@@ -32,13 +38,6 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 connectDB();
-
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => {
-//     app.listen(PORT, console.log(`Server up and running on port ${PORT}`));
-//   })
-//   .catch((err) => console.log(err));
 
 mongoose.connection.once("open", () => {
     console.log("Connected to MongoDB");

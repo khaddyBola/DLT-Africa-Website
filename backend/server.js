@@ -29,7 +29,7 @@ app.use(
 );
 
 // app.use("/api/v1/cohorts", userRoute);
-app.use("/api/v1/create-event", eventRoute);
+app.use("/api/v1/events", eventRoute);
 
 app.get("/", (req, res) => {
     res.send("Home Page");

@@ -1,16 +1,19 @@
 require("dotenv").config();
 
+const path = require("path");
 const express = require("express");
 const connectDB = require("./config/DBconnect");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const userRoute = require("./routes/userRoute");
+const eventRoute = require("./routes/eventRoute");
 const mongoose = require("mongoose");
 
 const app = express();
 
-app.use("/event", express.static("storage/images"));
+//serve static files
+app.use("/", express.static(path.join(__dirname, "/public")));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,7 +28,8 @@ app.use(
     })
 );
 
-app.use("/api/cohorts", userRoute);
+// app.use("/api/v1/cohorts", userRoute);
+app.use("/api/v1/create-event", eventRoute);
 
 app.get("/", (req, res) => {
     res.send("Home Page");

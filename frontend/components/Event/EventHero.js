@@ -14,7 +14,7 @@ const EventHero = () => {
             </p>
           </div>
         </div>
-        <div className="flex-1 pt-[96px] pr-[60.47px] pb-[115.3px] w-[472px] h-[516px]">
+        <div className="flex-1 pt-[91px] pr-[60.47px] pb-[115.3px] w-[472px]">
         <img src="sideimg.png" alt="side" />
         </div>
       </div>

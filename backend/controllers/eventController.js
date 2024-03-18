@@ -35,7 +35,12 @@ const createNewEvent = async (req, res) => {
     }
 };
 
-const getAllEvents = async (req, res) => { };
+const getAllEvents = async (req, res) => {
+    const events = await Event.find();
+    if (!events) return res.status(201).json({ message: "No events found" })
+    else return res.status(200).json(events);
+};
+
 const getEvent = async (req, res) => { };
 const updateEvent = async (req, res) => { };
 const deleteEvent = async (req, res) => { };

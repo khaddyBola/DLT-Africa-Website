@@ -3,8 +3,8 @@ const HackerHouseBuild = () => {
   return (
 
     <>
-            <div className="bg-[#031700] max-w-[1440px] h-[745px] md:834px ">
-                <div className="  flex justify-center gap-[70px] pt-[201px] " >
+            <div className="bg-[#031700] relative max-w-[1440px] h-[745px] md:834px ">
+                <div className=" z-50 flex justify-center gap-[70px] pt-[201px] " >
                     <div className="text-[#F7FCFE] text-[34px] font-[500] max-w-[459px] ">
                         <h2 className="mb-[15px] ">Build with the Best in Web3</h2>
                         <p className="text-[17px] font-[300] max-w-[343px] mb-[25px] "> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
@@ -16,7 +16,7 @@ const HackerHouseBuild = () => {
                     </div>
 
                 </div>
-                <div className="div">
+                <div className="div z-50">
                     <img src="/images/strokeimg.svg" alt="strok"
                         className="absolute left-[1017px] top-[110px]"
                     />

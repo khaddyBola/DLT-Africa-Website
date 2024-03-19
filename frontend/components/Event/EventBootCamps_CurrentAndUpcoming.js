@@ -1,11 +1,12 @@
 const EventBootCamps_CurrentAndUpcoming = () => {
   return (
     <>
-      <div className=" mb-[107px] w-[977px] bg-[#FFF] border border-gray-700 rounded-xl mx-auto pl-[53px] pr-[110px] py-[43px]">
-        <div className="flex  justify-between gap-10">
+    <div className="max-w-[977px] mx-auto hidden md:block">
+      <div className="bg-[#FFF] border border-gray-700 rounded-xl  pl-[53px] pr-[110px] py-[32px]">
+        <div className="flex justify-between gap-10">
           <div>
-            <h2 className="text-[48px] font-[400]   ">Bootcamps</h2>
-            <h4 className="text-[20px] font-[400]  w-[529px]  ">
+            <h2 className="lg:text-[48px] md:text-[36px] font-[400] font-serif">Bootcamps</h2>
+            <h4 className="max-w-[529px] lg:text-[20px] md:text-[16px] font-[400] font-Poppins ">
               Learn, build and showcase your skills alongside like-minded peers.
             </h4>
           </div>
@@ -14,15 +15,16 @@ const EventBootCamps_CurrentAndUpcoming = () => {
           </div>
         </div>
       </div>
+    </div>
 
       <div>
-        <h1 className="text-center text-[48px] font-normal trackong-[3.36px] leading-[120px] tracking-wide mt-[114px] mb-[57px]">
+        <h1 className="text-center text-[28px] lg:text-[48px] md:text-[36px] font-normal trackong-[3.36px] leading-[120px] tracking-wide lg:mt-[114px] md:mt-[40px] lg:mb-[57px] md:mb-[55px]">
           Current and Upcoming
         </h1>
       </div>
 
-      <div className="flex justify-center gap-[44px] mb-[135px]">
-        <div className="max-w-xs shadow-lg flex flex-col      items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
+      <div className="flex justify-center flex-wrap gap-[44px] lg:mb-[135px] md:mb-[40px] sm:mb-[67px]">
+        <div className="max-w-xs flex flex-col items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
           <img
             className="h-[150px] w-[150px] rounded-full "
             src="https://tinyurl.com/ytcbk3ej"
@@ -48,9 +50,8 @@ const EventBootCamps_CurrentAndUpcoming = () => {
             </button>
           </div>
         </div>
-        
-        
-        <div className="max-w-xs shadow-lg flex flex-col      items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
+
+        <div className="max-w-xs flex flex-col items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
           <img
             className="h-[150px] w-[150px] rounded-full "
             src="https://tinyurl.com/ytcbk3ej"
@@ -76,9 +77,8 @@ const EventBootCamps_CurrentAndUpcoming = () => {
             </button>
           </div>
         </div>
-        
-        
-        <div className="max-w-xs shadow-lg flex flex-col      items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
+
+        <div className="max-w-xs flex flex-col items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
           <img
             className="h-[150px] w-[150px] rounded-full "
             src="https://tinyurl.com/ytcbk3ej"
@@ -104,9 +104,8 @@ const EventBootCamps_CurrentAndUpcoming = () => {
             </button>
           </div>
         </div>
-        
-        
-        <div className="max-w-xs shadow-lg flex flex-col      items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
+
+        <div className="max-w-xs flex flex-col items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
           <img
             className="h-[150px] w-[150px] rounded-full "
             src="https://tinyurl.com/ytcbk3ej"
@@ -138,3 +137,5 @@ const EventBootCamps_CurrentAndUpcoming = () => {
 };
 
 export default EventBootCamps_CurrentAndUpcoming;
+
+

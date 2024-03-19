@@ -6,7 +6,7 @@ import EventPastEventSection from "../components/Event/EventPastEventSection";
 
 const event = () => {
   return (
-    <div className='bg-[#F6F6F6]'>
+    <div>
       <EventHero />
       <EventBootCamps_CurrentAndUpcoming />
       <EventHackathon_CurrentAndUpcoming />

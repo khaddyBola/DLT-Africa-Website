@@ -1,8 +1,7 @@
+import EventPastEventSection from "../Event/EventPastEventSection";
 
 const HackerHousePastEvent = () => {
-  return (
-    <div>HackerHousePastEvent</div>
-  )
-}
+  return <EventPastEventSection />;
+};
 
-export default HackerHousePastEvent
+export default HackerHousePastEvent;

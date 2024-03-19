@@ -1,6 +1,6 @@
 const Confirmation = () => {
   return (
-    <div className="flex justify-center items-center ">
+    <div className="flex justify-center items-center mt-[20px] ">
       <div className="bg-[#FFEFD4] h-[579px] w-[1013px] rounded-[20px] flex justify-center items-center relative">
         <div className="flex flex-col text-center">
           <div>

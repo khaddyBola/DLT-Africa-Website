@@ -21,7 +21,7 @@ const JoinHackerHouse = () => {
           <div className="">
             <img
               src="hackerhousehero_img/Working 1.png"
-              class="absolute top-[46px] left-[794px]"
+              className="absolute top-[46px] left-[794px]"
             />
           </div>
         </div>

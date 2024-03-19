@@ -83,7 +83,7 @@ const secData = [
 
 const FullstackIconSection = () => {
   return (
-    <section className="mainCon flex justify-center mt-[40px] text-center px-[210px] bg-[#F7FCFE]">
+    <section className="mainCon flex justify-center pt-[84px] pb-[71px] text-center px-[210px] bg-[#F6F6F6]">
     <div className="iconsCon grid grid-cols-3 gap-30px sm:grid-cols-1 gap-2 md:grid-cols-2 gap-4 items-center justify-center">
       {secData.map(({ id, title, text, text2, icon, courseConClass, iconBodyClass, iconsClass, titleClass, textClass }) => (
         <IconSection

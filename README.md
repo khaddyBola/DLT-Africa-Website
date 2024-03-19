@@ -36,7 +36,7 @@ To run the website locally or contribute to the development, follow these steps:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/DLT-Africa/DLT-Africa-Website.git
+   git clone 'your forked github repo link'
 
 3. **Navigate to the project directory**:
 

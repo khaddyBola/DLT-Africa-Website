@@ -3,7 +3,7 @@ import CourseSection from "../CoursesHero/CourseHeroSec";
 
 const sectionData = [
   {
-    id: 2,
+    id: 3,
     title: "UI/UX Design and Prototyping(Product Design)",
     text: "Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
     headline1: "Graduate in six months, part-time, and start working in the high-demand field of software development.",

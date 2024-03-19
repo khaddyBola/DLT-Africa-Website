@@ -4,10 +4,9 @@ import EventHero from "../components/Event/EventHero";
 import EventIncubator_CurrentAndUpcoming from "../components/Event/EventIncubator_CurrentAndUpcoming";
 import EventPastEventSection from "../components/Event/EventPastEventSection";
 
-
 const event = () => {
   return (
-    <div className=' p-4 bg-[#F6F6F6]'>
+    <div>
       <EventHero />
       <EventBootCamps_CurrentAndUpcoming />
       <EventHackathon_CurrentAndUpcoming />

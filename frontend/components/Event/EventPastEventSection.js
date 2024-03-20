@@ -22,7 +22,7 @@ const TABLE_ROWS = [
 		img: "images/past-event-1.svg",
 		description:
 			"Vorem ipsum dolor sit dsamet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-		email: "john@creative-tim.com",
+		// email: "john@creative-tim.com",
 		time: "Q4 2024",
 		bootCamp: "Bootcamp",
 		web3: "Web 3",
@@ -32,7 +32,7 @@ const TABLE_ROWS = [
 		img: "images/past-event-2.svg",
 		description:
 			"Vorem ipsumfff dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-		email: "alexa@creative-tim.com",
+		// email: "alexa@creative-tim.com",
 		time: "Q4 2024",
 		bootCamp: "Bootcamp",
 		web3: "Web 3",
@@ -43,7 +43,7 @@ const TABLE_ROWS = [
 		img: "images/past-event-3.svg",
 		description:
 			"Vorem fffipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-		email: "laurent@creative-tim.com",
+		// email: "laurent@creative-tim.com",
 		time: "Q4 2024",
 		bootCamp: "Bootcamp",
 		web3: "Web 3",

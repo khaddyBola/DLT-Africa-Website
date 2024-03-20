@@ -2,7 +2,7 @@ import React from "react";
 
 const EventHero = () => {
   return (
-    <div className="flex justify-center items-center bg-[#F6F7F6]">
+    <div className="flex justify-center items-center bg-[#F6F7F6] mb-[50px]">
       <div className="container px-4 flex">
         <div className="flex-1 pr-8 pt-[194px] pb-[325px] pl-[50px] items-end content-end gap-[15px] flex-wrap">
           <div className="flex w-[584px] flex-wrap gap-[10px] items-end content-end">
@@ -14,8 +14,8 @@ const EventHero = () => {
             </p>
           </div>
         </div>
-        <div className="flex-1 pt-[96px] pr-[60.47px] pb-[115.3px] w-[582px] h-[159px]">
-        <img src="/images/sideimg.svg" alt="side" />
+        <div className="flex-1 pt-[91px] pr-[60.47px] pb-[115.3px] w-[472px]">
+        <img src="sideimg.png" alt="side" />
         </div>
       </div>
     </div>

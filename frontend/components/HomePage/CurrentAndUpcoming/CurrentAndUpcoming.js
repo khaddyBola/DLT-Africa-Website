@@ -1,4 +1,3 @@
-import React from "react";
 
 const CurrentAndUpcoming = () => {
   return (
@@ -119,3 +118,4 @@ const CurrentAndUpcoming = () => {
 };
 
 export default CurrentAndUpcoming;
+

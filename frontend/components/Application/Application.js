@@ -1,4 +1,14 @@
-import { Button, Checkbox, Input, Option, Select } from "@material-tailwind/react";
+import {
+	Button,
+	Checkbox,
+	Input,
+	Option,
+	Select,
+	List,
+	ListItem,
+	ListItemPrefix,
+	Typography,
+} from "@material-tailwind/react";
 import { FaCheck } from "react-icons/fa6";
 
 const Application = () => {
@@ -15,7 +25,7 @@ const Application = () => {
 				<div className="flex flex-col pt-[103px] px-4 lg:px-12">
 					<div className="grid grid-cols-1 md:grid-cols-2 place-content-between">
 						<div className="p-4">
-							<h2 className="text-3xl font-bold mb-4">
+							<h2 className="text-4xl font-bold mb-4">
 								Apply to Join Our Bootcamp Class
 							</h2>
 							<p className="mb-4 text-lg">
@@ -25,7 +35,7 @@ const Application = () => {
 							</p>
 						</div>
 						<div className="p-4 flex justify-end ">
-							<div className=" border rounded-2xl border-gray-600 bg-[#FFF] pt-10 pr-14 pb-9 pl-6 max-w-[404px]">
+							<div className=" border rounded-2xl border-gray-600 bg-[#FFF] pt-10 pr-10 pb-9 pl-6 max-w-[404px]">
 								<div className="flex flex-col">
 									<div className="flex  gap-2">
 										{" "}
@@ -269,26 +279,58 @@ const Application = () => {
 									<Option value="svelte">Material Tailwind Svelte</Option>
 								</Select>
 							</div>
-							<div className="mt-5 flex flex-col gap-3">
-								<div>
-									<Checkbox
-										labelProps={{
-											className: "text-sm",
-										}}
-										label="I would like to be kept up to date with new training programs/events/promotions/marketing."
-									/>
-								</div>
-								<div>
-									<Checkbox
-										labelProps={{
-											className: "text-sm",
-										}}
-										label="By submitting this form, I accept DLT Africa's Privacy Policy."
-									/>
-								</div>
-
+							<div className="mt-5 flex w-full flex-col gap-3">
+								<List className="flex-col">
+									<ListItem className="p-0 hover:bg-transparent">
+										<label
+											// htmlFor="horizontal-list-react"
+											className="flex w-full cursor-pointer items-center  py-2"
+										>
+											<ListItemPrefix className="mr-3">
+												<Checkbox
+													// id="horizontal-list-react"
+													ripple={false}
+													className="hover:before:opacity-0 bg-white"
+													containerProps={{
+														className: "p-0",
+													}}
+												/>
+											</ListItemPrefix>
+											<Typography className="font-normal text-sm text-gray-600">
+												I would like to be kept up to date with new training
+												programs, events, promotions and marketing.
+											</Typography>
+										</label>
+									</ListItem>
+									<ListItem className="p-0 hover:bg-transparent">
+										<label
+											// htmlFor="horizontal-list-vue"
+											className="flex w-full cursor-pointer items-center py-2"
+										>
+											<ListItemPrefix className="mr-3">
+												<Checkbox
+													// id="horizontal-list-vue"
+													ripple={false}
+													className="hover:before:opacity-0 bg-white"
+													containerProps={{
+														className: "p-0",
+													}}
+												/>
+											</ListItemPrefix>
+											<Typography className=" font-normal text-sm text-gray-600">
+												By submitting this form, I accept DLT Africa's Privacy
+												Policy.{" "}
+											</Typography>
+										</label>
+									</ListItem>
+								</List>
 							</div>
-              <Button size="lg"  className="capitalize px-16 py-4 mt-5 bg-[#FC7C13]">Register</Button>
+							<Button
+								size="lg"
+								className="capitalize px-16 py-4 mt-5 bg-[#FC7C13]"
+							>
+								Register
+							</Button>
 						</div>
 					</div>
 				</div>

@@ -30,14 +30,12 @@ const WhatYou = () => {
   return (
     <div className="bg-[#EFFFE2] border-2 border-black-[#000000]">
      <div className='flex flex-col text-center mt-[57px] 
-          
           text-[#1C1C1C] 
           lg:text-[48px]
           font-serif
           tracking-[2.52px]
           width-full
-          md:text-[36px]
-          '
+          md:text-[36px]'
         > Here&apos;s what you&apos;ll get
       </div>
       <p className='lg:text-[16px] md:text-[14px] mt-[10px] leading-[120%] 
@@ -50,9 +48,7 @@ const WhatYou = () => {
       <div className='grid md:grid-cols-3 gap-12 sm:gap-16 md:gap-18 lg:gap-28 xl:gap-44 px-14 lg:px-32 pb-[61px] '>
         {getDetails.map((details) => (
           <div className='flex flex-col' key={details.id}>
-            {/* <div className='lg:px-[117px]'> */}
               <Image className='w-[50px] mx-auto h-[50px] mb-[15px]' src={details.img}/>
-            {/* </div> */}
 
             <div className='flex flex-col items-center gap-[15px]'>
               <h2 className='text-left

@@ -2,7 +2,7 @@ const EventHackathon_CurrentAndUpcoming = () => {
   return (
     <>
       <div className=" max-w-[977px] mx-auto hidden md:block">
-        <div className="bg-[#FFF] border border-gray-700 rounded-xl mx-auto pl-[90px] pr-[52px] py-[20px] ">
+        <div className="bg-[#F6F6F6] border border-gray-700 rounded-xl mx-auto pl-[90px] pr-[52px] py-[20px] ">
           <div className="flex justify-between gap-10  ">
             <div>
               <img src="/images/hackaimg.svg" alt="hack" />

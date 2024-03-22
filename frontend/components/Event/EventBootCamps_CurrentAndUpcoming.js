@@ -2,7 +2,7 @@ const EventBootCamps_CurrentAndUpcoming = () => {
   return (
     <>
     <div className="max-w-[977px] mx-auto hidden md:block">
-      <div className="bg-[#FFF] border border-gray-700 rounded-xl  pl-[53px] pr-[110px] py-[32px]">
+      <div className="bg-[#F6F6F6] border border-gray-700 rounded-xl  pl-[53px] pr-[110px] py-[32px]">
         <div className="flex justify-between gap-10">
           <div>
             <h2 className="lg:text-[48px] md:text-[36px] font-[400] font-serif">Bootcamps</h2>

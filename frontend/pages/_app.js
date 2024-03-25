@@ -6,6 +6,8 @@ import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
+
+
 	return (
 		<>
 			<Head>
@@ -13,7 +15,7 @@ function MyApp({ Component, pageProps }) {
 				<meta name="description" content="DLT Africa Official Website" />
 				{/* <link rel="icon" href="/logo.svg" /> */}
 			</Head>
-			<ThemeProvider>
+			<ThemeProvider >
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>

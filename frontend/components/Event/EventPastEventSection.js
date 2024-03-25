@@ -133,12 +133,12 @@ const EventPastEventSection = () => {
 											const isLast = index === TABLE_ROWS.length - 1;
 											const classes = isLast
 												? "p-4"
-												: "p-4 border-b border-blue-gray-50";
+												: "p-4  border-b border-blue-gray-50";
 
 											return (
 												<tr key={description}>
 													<td className={classes}>
-														<div className="flex items-center gap-3 max-w-[25rem] md:max-w-[30rem] lg:max-w-[39.5rem] xl:max-w-[45rem]">
+														<div className="flex items-center gap-3 max-w-[20rem] lg:max-w-[27rem] ">
 															<Avatar src={img} alt={description} size="lg" />
 															{/* <div className="flex flex-col "> */}
 															<Typography

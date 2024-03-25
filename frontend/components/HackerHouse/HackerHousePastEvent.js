@@ -138,7 +138,7 @@ const HackerHousePastEvent = () => {
 											return (
 												<tr key={description}>
 													<td className={classes}>
-														<div className="flex items-center gap-3 max-w-[25rem] md:max-w-[30rem] lg:max-w-[39.5rem] xl:max-w-[45rem]">
+                          <div className="flex items-center gap-3 max-w-[20rem] lg:max-w-[27rem] ">
 															<Avatar src={img} alt={description} size="lg" />
 															{/* <div className="flex flex-col "> */}
 															<Typography

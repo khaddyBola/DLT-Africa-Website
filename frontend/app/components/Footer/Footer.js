@@ -10,14 +10,14 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="w-[1500px] h-[469px] bg-[#EFFFE2] flex flex-col items-center justify-center text-[18px]">
+    <footer className=" h-[469px] bg-[#EFFFE2] flex flex-col items-center justify-center text-[18px]">
       <div className=" flex flex-row justify-center gap-[50px] mr-[300px] ">
         <div className="w-auto  h-auto min-h-[80px] flex flex-col items-center  ml-[80px]">
           <div className="flex flex-col gap-10 mt-[76px] w-[211px] justify-center items-center">
             <a href="">
               {" "}
               <img
-                src="https://shorturl.at/oGY13"
+                src="https://dltafrica.io/static/media/dlt-logo.5ab17ff18a5c4ae8adb1df98544f1f69.svg"
                 alt="logo"
                 className="w-[126px] h-[50.797px] "
               />

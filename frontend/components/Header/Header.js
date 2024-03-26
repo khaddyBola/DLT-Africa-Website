@@ -40,7 +40,7 @@ const Header = () => {
             className="p-4 min-h-[300px] px-[50px] "
             
           >
-            <div className="mb-6 flex items-center justify-between ">
+            <div className="mb-6 flex items-center justify-between ">cd
               <Link href={"/"}>
               <img src="/images/Logolefticon.svg" alt="icon" />                
                 {/* <img src={navbarContent.logo} /> */}

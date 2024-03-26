@@ -9,11 +9,13 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 
+
 const Header = () => {
   const [openTop, setOpenTop] = useState(false);
 
   const openDrawerTop = () => setOpenTop(true);
-  const closeDrawerTop = () => setOpenTop(false);
+  const closeDrawerTop = () => setOpenTop(false); 
+
 
   return (
     <>

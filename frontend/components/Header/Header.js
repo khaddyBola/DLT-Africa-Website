@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-between px-[50px] py-[20px] ">
+      <div className="flex justify-between p-[20]  py-[20px] ">
         <div>
           <Link href={"/"}>
             <img src={navbarContent.logo} />
@@ -37,7 +37,7 @@ const Header = () => {
             placement="top"
             open={openTop}
             onClose={closeDrawerTop}
-            className="p-4 min-h-[350px] px-[50px] "
+            className="p-4 min-h-[300px] px-[50px] "
             
           >
             <div className="mb-6 flex items-center justify-between ">

@@ -71,7 +71,7 @@ const Faqs = () => {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}
-      className="p-40 "
+      className="p-40 flex flex-col items-center"
     >
       <div className="text-center mb-10 -m-20">
         <h1 className="text-[48px] mb-5">Frequently asked questions</h1>
@@ -85,37 +85,37 @@ const Faqs = () => {
         </p>
       </div>
 
-      <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
+      <div className="bg-orange-300 p-5 mb-5 rounded-[10px] w-[737px]">
         {faqOne.map(({ question, answer, id }) => (
           <FAQ key={id} question={question} answer={answer} />
         ))}
       </div>
 
-      <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
+      <div className="bg-orange-300 p-5 mb-5 rounded-[10px] w-[737px]">
         {faqTwo.map(({ question, answer, id }) => (
           <FAQ key={id} question={question} answer={answer} />
         ))}
       </div>
 
-      <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
+      <div className="bg-orange-300 p-5 mb-5 rounded-[10px] w-[737px]">
         {faqThree.map(({ question, answer, id }) => (
           <FAQ key={id} question={question} answer={answer} />
         ))}
       </div>
 
-      <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
+      <div className="bg-orange-300 p-5 mb-5 rounded-[10px] w-[737px]">
         {faqFour.map(({ question, answer, id }) => (
           <FAQ key={id} question={question} answer={answer} />
         ))}
       </div>
 
-      <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
+      <div className="bg-orange-300 p-5 mb-5 rounded-[10px] w-[737px]">
         {faqFive.map(({ question, answer, id }) => (
           <FAQ key={id} question={question} answer={answer} />
         ))}
       </div>
 
-      <div className="bg-orange-300 p-5 mb-5 rounded-[10px]">
+      <div className="bg-orange-300 p-5 mb-5 rounded-[10px] w-[737px]">
         {faqSix.map(({ question, answer, id }) => (
           <FAQ key={id} question={question} answer={answer} />
         ))}

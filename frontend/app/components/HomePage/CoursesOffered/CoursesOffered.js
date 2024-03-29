@@ -17,7 +17,7 @@ const CoursesOffered = () => {
             src={Course1}
           />
 
-          <div className="w-[230px] flex flex-col items-center gap-[25px]">
+          <div className="w-[230px] flex flex-col items-center gap-[25px] ">
             <h4 className=" text-black font-poppins font-semibold text-[22px] leading-[26.4px] ">
               Full-Stack web development
             </h4>
@@ -26,7 +26,7 @@ const CoursesOffered = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum.
             </p>
-            <button className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed ">
+            <button className="flex justify-center items-center w-[261px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed ">
               Learn full stack development
             </button>
           </div>

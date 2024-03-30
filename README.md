@@ -36,7 +36,7 @@ To run the website locally or contribute to the development, follow these steps:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/DLT-Africa/DLT-Africa-Website.git
+   git clone 'your forked github repo link'
 
 3. **Navigate to the project directory**:
 
@@ -71,3 +71,5 @@ git push origin `name of the issue you're picking`
 Go to your github and submit a pull request to the main repository.
 
 Your pull request will be reviewed by the maintainers, and any necessary feedback or adjustments will be provided.
+
+

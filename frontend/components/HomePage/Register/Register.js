@@ -1,5 +1,6 @@
 const RegisterOnline = () => {
   return (
+
     <div className="bg-gray-100 min-h-screen  flex justify-center items-center">
       <div className="max-w-screen-xl p-8 w-full">
         <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 lg:space-x-20">
@@ -30,6 +31,7 @@ const RegisterOnline = () => {
         </div>
       </div>
     </div>
+
   );
 };
 

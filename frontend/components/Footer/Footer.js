@@ -8,6 +8,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
+
 const Footer = () => {
   return (
     <footer className="w-[1500px] h-[469px] bg-[#EFFFE2] flex flex-col items-center justify-center text-[18px]">

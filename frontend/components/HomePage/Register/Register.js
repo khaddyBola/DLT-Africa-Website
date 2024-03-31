@@ -1,4 +1,3 @@
-
 const RegisterOnline = () => {
   return (
     <div className="bg-gray-100 min-h-screen  flex justify-center items-center">
@@ -10,23 +9,19 @@ const RegisterOnline = () => {
             className="w-full lg:w-auto lg:max-w-[527px] h-[344px] flex-shrink-0 rounded-[20px] mb-[54px]"
           />
 
-          <div className="inline-flex flex-col justify-left gap-8 text-center w-full lg:w-auto lg:text-left 2sm:justify-center 2sm:text-center"> 
-            <div className="w-full lg:w-[545px]">
-              <h1 className="text-neutral-dark font-serif text-4xl lg:text-[40px] font-bold leading-9 tracking-wider 2sm:text-[30px] ">
-                Ready To Change{" "}
-                <span className="text-orange-500 font-serif font-normal leading-60px lg:leading-[72px] tracking-[3.36px] lg:text-5xl">
-                  Your 
-                  Life?
-                </span>
-              </h1>
+          <div className="inline-flex flex-col justify-left gap-8 text-center w-full lg:w-auto lg:text-left  ">
+            <div className=" ">
+              <div className="text-[45px] lg:text-left xl:text-left lg:text-[45px] mb-10 ">
+                <span className="text-[#252A24]">Ready To Change</span>{" "}
+                <span className="text-[#FC7C13]">Your Life?</span>
+              </div>
+              <div className="w-full lg:w-[450px] xl:w-[540px] mb-[38px] text-[16px] lg:text-left xl:text-left">
+                Register for our online classes, consectetur adipiscing elit.
+                Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                Class aptent taciti sociosqu ad litora torquent per conubia
+                nostra, per inceptos himenaeos.
+              </div>
             </div>
-
-            <p className="text-neutral-dark font-poppins text-base lg:text-lg opacity-75">
-              Register for our online classes, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos.
-            </p>
 
             <button className="w-full lg:w-[353px]  h-[55px] p-[10px] justify-center items-center gap-2 rounded-lg border-solid border-2 border-orange-500 text-orange-500 hover:bg-orange-100">
               Register
@@ -41,40 +36,43 @@ const RegisterOnline = () => {
 export default RegisterOnline;
 
 
+
 const RegisterOffline = () => {
   return (
-    <div className='w-auto bg-[#186106] items-center flex justify-center md:h-[311px] xl:h-[522px] overflow-hidden 2sm:h-[375px]'>
-      <div className='flex justify-center items-center text-center relative'>
-        <div className='absolute lg:top-[-150px] lg:left-[-300px] lg:bottom-[0] md:left-[-190px] md:bottom-0 2sm:left-[-30px] 2sm:bottom-0 2sm:top-[-60px] '>
-          <img src='Group 162.png' className='md:h-[300px] xl:h-[500px] 2sm:h-[250px]' />
+    <div className="w-auto h-auto bg-[#186106] items-center flex justify-center overflow-hidden">
+      <div className="flex justify-center items-center text-center relative">
+        <div className="absolute xl:left-[-400px] lg:left-[-300px] md:left-[-200px] sm:left-[-100px] left-0 top-0">
+          <img src="/Group 162.png" className="h-[350px]" />
         </div>
-        <div className='flex items-center flex-col xl:gap-16 xl:w-full '>
-          <div>
-            <h1 className='text-[#F7FCFE] font-serif text-[36px] font-bold-[400px] font-normal leading-9 tracking-[2.52px] sm:text-[25px] lg:text-[36px] xl:text-[48px]  '>
-              <span>Register for our </span>
-              <span className='text-orange-500 font-serif font-normal leading-[60px] tracking-[2.52px]'>Physical Class</span>
-            </h1>
-          </div>
-          <div className='text-center sm:text-center sm:px-20'>
-            <p className='text-[#F7FCFE] font-poppins text-[14px] opacity-75 xl:w-[803px] md:w-[589px]'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        <div className="flex items-center flex-col gap-20">
+          <h1 className="text-[#F7FCFE] font-serif text-[36px] font-bold-[400px] font-normal leading-9 tracking-[2.52px]  mt-[100px] w-[300px] xl:w-[600px] lg:w-[300px] ">
+            <span>Register for our </span>
+            <span className="text-orange-500 font-serif font-normal leading-[60px] tracking-[2.52px]">
+              Physical Class
+            </span>
+          </h1>
+
+          <div className="w-full xl:w-[600px] lg:w-[500px] md:w-[450px] sm:w-[400px]">
+            <p className="text-[#F7FCFE] font-poppins text-[20px] opacity-75 mt-[-40px] p-5 ">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc 
+              vulputate libero et velit interdum, ac aliquet odio mattis. Class 
+              aptent taciti sociosqu ad litora torquent per conubia nostra, per 
+              inceptos himenaeos.
             </p>
           </div>
 
-          <div className='flex justify-center mt-10 sm:mt-5'>
-            <button className="w-[353px] h-[55px] p-[10px] flex justify-center items-center gap-[10px] rounded-lg bg-orange-500 text-[#F7FCFE] 2sm:w-[250px] 2sm:h-[45px] 2sm:text-sm md:w-[300px] md:h-[50px] md:text-base lg:w-[400px] lg:h-[60px] lg:text-lg">
-              Register
-            </button>
-          </div>
-
+          <button className="w-[200px] mt-[-15px] z-10 xl:w-[350px] lg:w-[320px] md:w-[300px]  h-[55px] p-[10px] flex justify-center items-center gap-[10px] rounded-lg bg-orange-500 text-[#F7FCFE] text-sm  mb-14">
+            Register
+          </button>
         </div>
-        <div className='absolute bottom-0 right-0 xl:h-auto xl:top-[120px] md:right-[-100px]  md:top-[50px]   2sm:right-[-100px] 2sm:top-[80px] ' >
-        
-          <img src='Group 164.png' alt='image' className="md:h-[200px] xl:h-[300px] 2sm:h-[250px] " />
+        <div className="absolute xl:right-[-380px] lg:right-[-290px] md:right-[-200px] sm:right-[-200px] bottom-0 right-[-100px]">
+          <img src="/Group 164.png" alt="image" className="h-[300px]" />
         </div>
       </div>
     </div>
   );
 };
+
+
 
 export { RegisterOnline, RegisterOffline };

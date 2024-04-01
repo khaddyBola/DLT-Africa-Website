@@ -54,7 +54,7 @@ const Footer = () => {
               <p className="font-[700] font-[16px] w-[300px]">
                 For more info about our Classes
               </p>
-              <a href="#">(234)815 650 9701</a>
+              <p>(234)815 650 9701</p>
             </div>
 
             <div className="mb-[21px]">

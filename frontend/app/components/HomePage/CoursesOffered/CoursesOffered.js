@@ -3,6 +3,7 @@ import Course1 from "../../../../public/Course1.png";
 import Course2 from "../../../../public/Course2.png";
 import Course3 from "../../../../public/Course3.png";
 import Course4 from "../../../../public/Course4.png";
+import Link from "next/link";
 
 const CoursesOffered = () => {
   return (
@@ -26,9 +27,12 @@ const CoursesOffered = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum.
             </p>
-            <button className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed ">
+            <Link
+              href="/fullstack"
+              className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed "
+            >
               Learn full stack development
-            </button>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col w-[250px] p-2 items-center gap-4 rounded-2xl border border-orange-300">
@@ -44,9 +48,12 @@ const CoursesOffered = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum.
             </p>
-            <button className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed ">
+            <Link
+              href="/frontend"
+              className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed "
+            >
               Learn front end development
-            </button>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col  w-[250px] p-2 items-center gap-4 rounded-2xl border border-orange-300">
@@ -62,9 +69,12 @@ const CoursesOffered = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum.
             </p>
-            <button className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed ">
+            <Link
+              href="/product"
+              className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed "
+            >
               Learn product design
-            </button>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col w-[250px] p-2 items-center gap-4 rounded-2xl border border-orange-300">
@@ -80,9 +90,12 @@ const CoursesOffered = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum.
             </p>
-            <button className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed ">
+            <Link
+              href="blockchain"
+              className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed "
+            >
               Learn blockchain dev
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroImage from "../../../../public/images/hero-img.png";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -17,7 +18,7 @@ const HeroSection = () => {
           vulputate libero et velit interdum, ac aliquet odio mattis.
         </p>
 
-        <a
+        <Link
           className="bg-[#FC7C13] p-[10px] 
             flex mt-[15px] w-[195px] h-[55px] 
             rounded-[10px] items-center 
@@ -27,10 +28,10 @@ const HeroSection = () => {
             font-medium
             md:mb-[90px]
             mb-[38px]"
-          href="#"
+          href="/courses"
         >
           Browse Courses
-        </a>
+        </Link>
       </div>
 
       <div className="flex">

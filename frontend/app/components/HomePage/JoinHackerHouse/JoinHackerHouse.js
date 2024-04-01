@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Working from "../../../../public/Working.png";
+import Link from "next/link";
 
 const JoinHackerHouse = () => {
   return (
@@ -18,9 +19,11 @@ const JoinHackerHouse = () => {
                 velit interdum, ac aliquet odio mattis.
               </div>
             </div>
-            <div className="border border-[#C54809] rounded w-[355px] p-[10px] text-[16px] text-center font-poppins font-bold text-[#C54809] hover:bg-[white] cursor-pointer ">
-              Read more
-            </div>
+            <Link href="/hacker-house">
+              <div className="border border-[#C54809] rounded w-[355px] p-[10px] text-[16px] text-center font-poppins font-bold text-[#C54809] hover:bg-[white] cursor-pointer">
+                Read more
+              </div>
+            </Link>
           </div>
           <div className="">
             <Image src={Working} />

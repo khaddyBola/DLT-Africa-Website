@@ -37,7 +37,12 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-between px-[50px] py-[20px] " style={{ backgroundColor: pathname === '/hacker-house' ? '#000' : '#F6F7F6' }}>
+      <div
+        className="flex justify-between px-[50px] py-[20px] "
+        style={{
+          backgroundColor: pathname === "/hacker-house" ? "#000" : "#F6F7F6",
+        }}
+      >
         <div>
           <Link href={"/"}>
             <img src={navbarContent.logo} />
@@ -89,7 +94,7 @@ const Header = () => {
               </svg>
             </div>
 
-            <div className="flex flex-col gap-4 pr-20 items-end  p-[10]">
+            <div className="flex flex-col gap-4 pr-20 items-end  p-[10] ">
               <Link className=" text=[18px] hover:text-[#FC7C13]  " href={"/"}>
                 Home
               </Link>
@@ -116,6 +121,18 @@ const Header = () => {
                 href={"/courses"}
               >
                 Programmes
+              </Link>
+              <Link
+                className=" text=[18px] hover:text-[#FC7C13]  "
+                href={"/admin"}
+              >
+                Admin Registeration/Login
+              </Link>
+              <Link
+                className=" text=[18px] hover:text-[#FC7C13]  "
+                href={"/admin-dashboard"}
+              >
+                Admin Dashboard
               </Link>
             </div>
           </Drawer>

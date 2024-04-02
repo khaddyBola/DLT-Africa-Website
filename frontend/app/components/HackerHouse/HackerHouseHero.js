@@ -10,7 +10,6 @@ import Component282 from "../../../public/images/Component282.png";
 const HackerHouseHero = () => {
   return (
     <>
-
       <div className=" font-serif Max-w-[1440px] h-[640px] bg-[#031700] flex-wrap justify-end overflow-[hidden]">
         <div className="">
           <Image className="absolute top-[260px] left-[482px]  " src={Group1} />
@@ -29,7 +28,7 @@ const HackerHouseHero = () => {
           </p1>
         </div>
         <div className="flex flex-row justify-center gap-20 ">
-          <div className="text-[16px] border border-[#C54809] rounded-[10px] w-[355px] p-[10px] h-[55px] text-center font-poppins font-bold text-[#F7FCFE] bg-[#FC7C13] hover:bg-[#f19d53] cursor-pointer ">
+          <div className="text-[16px] border border-[#C54809] rounded-[10px] w-[355px] p-[10px] h-[55px] flex items-center justify-center font-poppins font-bold text-[#F7FCFE] bg-[#FC7C13] hover:bg-[#f19d53] cursor-pointer ">
             Sign up for Hacker House
           </div>
           <button className="border border-[#C54809] rounded-[10px] w-[196px] p-[10px] h-[55px] text-center font-poppins font-bold text-[#C54809] hover:bg-[white] cursor-pointer ">

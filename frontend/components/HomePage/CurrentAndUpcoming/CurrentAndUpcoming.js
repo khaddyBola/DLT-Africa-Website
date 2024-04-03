@@ -2,12 +2,12 @@
 const CurrentAndUpcoming = () => {
   return (
     <div className="container mx-auto px-4">
-      <h1 className="text-center text-6xl tracking-wide mb-12">
+      <h1 className="text-center text-[30px] xl:text-[40px] lg:text-[35px] tracking-wide mb-12">
         Current and Upcoming Programmmes.
       </h1>
 
-      <div className="flex justify-center gap-[40px]">
-        <div className="max-w-xs shadow-lg flex flex-col items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
+      <div className="flex justify-center gap-[50px] items-center  flex-col xl:flex-row lg:flex-row">
+        <div className="max-w-xs shadow-lg flex flex-col items-center  p-5 rounded-lg border border-orange-300 w-[243px]">
           <img
             className="h-[100px] w-[100px] rounded-full "
             src="https://tinyurl.com/ytcbk3ej"
@@ -33,7 +33,7 @@ const CurrentAndUpcoming = () => {
 
           </div>
         </div>
-        <div className="max-w-xs shadow-lg flex flex-col items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
+        <div className="max-w-xs shadow-lg flex flex-col items-center  p-5 rounded-lg border border-orange-300 w-[243px]">
           <img
             className="h-[100px] w-[100px] rounded-full "
             src="https://tinyurl.com/yc5mmukd"
@@ -59,7 +59,7 @@ const CurrentAndUpcoming = () => {
 
           </div>
         </div>
-        <div className="max-w-xs shadow-lg flex flex-col items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
+        <div className="max-w-xs shadow-lg flex flex-col items-center p-5 rounded-lg border border-orange-300 w-[243px]">
           <img
             className="h-[100px] w-[100px] rounded-full "
             src="https://tinyurl.com/yeykuw2x"
@@ -85,7 +85,7 @@ const CurrentAndUpcoming = () => {
 
           </div>
         </div>
-        <div className="max-w-xs shadow-lg flex flex-col items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
+        <div className="max-w-xs shadow-lg flex flex-col items-center p-5 rounded-lg border border-orange-300 w-[243px]">
           <img
             className="h-[100px] w-[100px] rounded-full "
             src="https://tinyurl.com/3wsufe7n"

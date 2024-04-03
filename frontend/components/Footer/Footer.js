@@ -1,10 +1,4 @@
-import {
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -29,7 +23,7 @@ const Footer = () => {
 
         <div className="w-auto max-w-[800px] h-auto min-h-[244px] inline-flex items-start gap-50  mt-[63px] ml-[150px]">
           <div className="w-[291px] h-[123px]">
-            <h1 className=" text-[#C54809] font-sans  text-[24px] font-bold leading-normal mb-[21px] text-[24px]">
+            <h1 className=" text-[#C54809] font-sans  font-bold leading-normal mb-[21px] text-[24px]">
               Our Mission
             </h1>
             <p className="text-[#252A24] font-source-sans-pro  font-normal leading-normal w-full h-auto min-h-[69px] text-[18px]">
@@ -38,7 +32,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="w-[264px] h-auto min-h-[244px] ml-[50px]  ">
-            <h1 className=" text-[#C54809] font-sans  text-[24px] font-bold leading-normal mb-[21px] text-[24px]">
+            <h1 className=" text-[#C54809] font-sans  font-bold leading-normal mb-[21px] text-[24px]">
               Contact Us
             </h1>
 
@@ -49,7 +43,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="mb-[21px]">
-              <p className="font-[700] font-[16px] w-[300px]">
+              <p className="font-[700] w-[300px]">
                 For more info about our Classes
               </p>
               <a href="#">(234)815 650 9701</a>
@@ -61,7 +55,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="w-[145px] h-auto min-h-[165px] ml-[50px]">
-            <h1 className=" text-[#C54809] font-sans  text-[24px] font-bold leading-normal mb-[21px] text-[24px]">
+            <h1 className=" text-[#C54809] font-sans font-bold leading-normal mb-[21px] text-[24px]">
               Quick Link
             </h1>
             <ul>

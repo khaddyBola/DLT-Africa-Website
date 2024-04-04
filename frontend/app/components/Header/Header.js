@@ -60,7 +60,7 @@ const Header = () => {
             placement="top"
             open={openTop}
             onClose={closeDrawerTop}
-            className="p-4 min-h-[300px] px-[50px] "
+            className="p-4 min-h-[300px] px-[50px] pb-[400px]"
           >
             <div className="mb-6 flex items-center justify-between ">
               <Link href={"/"}>

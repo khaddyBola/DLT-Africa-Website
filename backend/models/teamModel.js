@@ -21,7 +21,7 @@ const teamSchema = new mongoose.Schema({
   },
   phone: {
     type: String,
-    default: "+234",
+    default: "+234 812345678",
   },
   role: {
     type: String,

@@ -18,24 +18,20 @@ const secData = [
     icon: <ImHourGlass />,
     courseConClass:
       "py-2 px-30 flex flex-row items-center justify-center gap-[30px] ",
-    iconBodyClass:
-      " p-6 w-[229px] h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex sm:w-[180px] h-[200px] p-2",
-    iconsClass:
-      "text-[65px] text-[#C54809] mb-[30px] sm:text-[25px] md: text-[35px]", // Example class for icon size
-    titleClass: "text-[22px] font-normal text-[#1C1C1C]", // Example class for title
-    textClass: "text-md w-[100%] text-[#1C1C1C] mt-[10px]", // Example class for text
+    iconBodyClass:"sm:h-auto sm:p-2 sm:w-full md:w-[180px] md:h-[220px] lg:w-[229px] lg:h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex p-1",
+    iconsClass:"sm: text-[20px] md:text-[40px] lg:text-[65px] text-[#C54809] mb-[30px]", // Example class for icon size
+    titleClass: "text-[22px] font-normal text-[#1C1C1C] font-extrabold", // Example class for title
+    textClass: "text-md w-[100%] text-[#1C1C1C] mt-[10px] ", // Example class for text
   },
-  {
+  { 
     id: 2,
     title: "Date",
     text: "Inview",
     icon: <BsCalendar4Event />,
     courseConClass: " py-2 px-30 flex flex-row items-center justify-center", // Different class for the second item
-    iconBodyClass:
-      " p-6 w-[229px] h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex sm:w-[180px] h-[200px] p-1",
-    iconsClass:
-      "text-[65px] text-[#C54809] mb-[30px] sm:text-[25px] md: text-[35px]", // Example class for icon size
-    titleClass: "text-[22px] font-normal text-[#1C1C1C]", // Example class for title
+    iconBodyClass:"sm:h-auto sm:p-2 sm:w-full md:w-[180px] md:h-[220px] lg:w-[229px] lg:h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex p-1",
+    iconsClass:"sm: text-[20px] md:text-[40px] lg:text-[65px] text-[#C54809] mb-[30px]", // Example class for icon size
+    titleClass: "text-[22px] font-normal text-[#1C1C1C] font-extrabold", // Example class for title
     textClass: "text-md w-[100%] text-[#1C1C1C] mt-[10px]", // Example class for text
   },
   {
@@ -44,11 +40,9 @@ const secData = [
     text: "Our program doesn't require you to have any knowledge",
     icon: <IoIosApps />,
     courseConClass: "py-2 px-30 flex flex-row items-center justify-center", // Different class for the second item
-    iconBodyClass:
-      " p-6 w-[229px] h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex sm:w-[180px] h-[200px] p-1",
-    iconsClass:
-      "text-[65px] text-[#C54809] mb-[30px] sm:text-[25px] md: text-[35px]", // Example class for icon size
-    titleClass: "text-[22px] font-normal text-[#1C1C1C]", // Example class for title
+    iconBodyClass:"sm:h-auto sm:p-2 sm:w-full md:w-[180px] md:h-[220px] lg:w-[229px] lg:h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex p-1",
+    iconsClass:"sm: text-[20px] md:text-[40px] lg:text-[65px] text-[#C54809] mb-[30px]", // Example class for icon size
+    titleClass: "text-[22px] font-normal text-[#1C1C1C] font-extrabold", // Example class for title
     textClass: "text-md w-[100%] text-[#1C1C1C] mt-[10px]", // Example class for text
   },
   {
@@ -57,11 +51,9 @@ const secData = [
     text: "Our Blockchain course is online and the amount still in review",
     icon: <CgBrowser />, // Corrected to SlCalendar
     courseConClass: "py-2 px-30 flex flex-row items-center justify-center", // Different class for the second item
-    iconBodyClass:
-      " p-6 w-[229px] h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex sm:w-[180px] h-[200px] p-1",
-    iconsClass:
-      "text-[65px] text-[#C54809] mb-[30px] sm:text-[25px] md: text-[35px]", // Example class for icon size
-    titleClass: "text-[22px] font-normal text-[#1C1C1C]", // Example class for title
+    iconBodyClass:"sm:h-auto sm:p-2 sm:w-full md:w-[180px] md:h-[220px] lg:w-[229px] lg:h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex p-1",
+    iconsClass:"sm: text-[20px] md:text-[40px] lg:text-[65px] text-[#C54809] mb-[30px]", // Example class for icon size
+    titleClass: "text-[22px] font-normal text-[#1C1C1C] font-extrabold", // Example class for title
     textClass: "text-md w-[100%] text-[#1C1C1C] mt-[10px]", // Example class for text
   },
   {
@@ -70,11 +62,9 @@ const secData = [
     text: "All you'll needing for our program 1s a laptop and an open mind",
     icon: <BsListUl />,
     courseConClass: "py-2 px-30 flex flex-row items-center justify-center", // Different class for the second item
-    iconBodyClass:
-      " p-6 w-[229px] h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex sm:w-[180px] h-[200px] p-1",
-    iconsClass:
-      "text-[65px] text-[#C54809] mb-[30px] sm:text-[25px] md: text-[35px]", // Example class for icon size
-    titleClass: "text-[22px] font-normal text-[#1C1C1C]", // Example class for title
+    iconBodyClass:"sm:h-auto sm:p-2 sm:w-full md:w-[180px] md:h-[220px] lg:w-[229px] lg:h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex p-1",
+    iconsClass:"sm: text-[20px] md:text-[40px] lg:text-[65px] text-[#C54809] mb-[30px]", // Example class for icon size
+    titleClass: "text-[22px] font-normal text-[#1C1C1C] font-extrabold", // Example class for title
     textClass: "text-md w-[100%] text-[#1C1C1C] mt-[10px]", // Example class for text
   },
   {
@@ -83,11 +73,9 @@ const secData = [
     text: "Our cohorts will be given a lot of project to test their knowledge",
     icon: <BsLayoutWtf />,
     courseConClass: "py-2 px-30 flex flex-row items-center justify-center ", // Different class for the second item
-    iconBodyClass:
-      " p-6 w-[229px] h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex sm:w-auto h-[200px] p-1",
-    iconsClass:
-      "text-[65px] text-[#C54809] mb-[30px] sm:text-[25px] md: text-[35px]", // Example class for icon size
-    titleClass: "text-[22px] font-normal text-[#1C1C1C]", // Example class for title
+    iconBodyClass:"sm:h-auto sm:p-2 sm:w-full md:w-[180px] md:h-[220px] lg:w-[229px] lg:h-[241px] border-2 border-[#fc7c1366] shadow-md rounded-[10px] flex p-1",
+    iconsClass:"sm: text-[20px] md:text-[40px] lg:text-[65px] text-[#C54809] mb-[30px]", // Example class for icon size
+    titleClass: "text-[22px] font-normal text-[#1C1C1C] font-extrabold", // Example class for title
     textClass: "text-md w-[100%] text-[#1C1C1C] mt-[10px]", // Example class for text
   },
   // Add more data objects as needed
@@ -95,8 +83,8 @@ const secData = [
 
 const BlockchainIconSection = () => {
   return (
-    <section className="mainCon flex justify-center pt-[84px] pb-[71px] text-center px-[210px] bg-[#F6F6F6]">
-      <div className="iconsCon grid grid-cols-3 gap-30px sm:grid-cols-1 gap-2 md:grid-cols-2 gap-4 items-center justify-center">
+    <section className="mainCon flex justify-center pt-[84px] pb-[71px] text-center sm:px-[100px] md:px-[120px] lg:[220] bg-[#F6F6F6]">
+      <div className="iconsCon sm: grid grid-cols-1 sm:gap-5 md:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-20 items-center justify-center">
         {secData.map(
           ({
             id,

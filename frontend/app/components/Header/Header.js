@@ -95,21 +95,31 @@ const Header = () => {
             </div>
 
             <div className="flex flex-col gap-4 pr-20 items-end  p-[10] ">
-              <Link className=" text=[18px] hover:text-[#FC7C13]  " href={"/"}>
-                Home
+              <Link
+                className=" text=[18px] hover:text-[#FC7C13]  "
+                href={"/admin-dashboard"}
+              >
+                Admin Dashboard
               </Link>
               <Link
                 className=" text=[18px] hover:text-[#FC7C13]  "
-                href={"/hacker-house"}
+                href={"/admin"}
               >
-                Hacker House
+                Admin Registeration/Login
               </Link>
+              
               <a
                 className="text=[18px] hover:text-[#FC7C13]  "
                 href="https://medium.com/"
               >
                 Blog
               </a>
+              <Link
+                className=" text=[18px] hover:text-[#FC7C13]  "
+                href={"/hacker-house"}
+              >
+                Hacker House
+              </Link>
               <Link
                 className=" text=[18px] hover:text-[#FC7C13]  "
                 href={"/team"}
@@ -121,18 +131,6 @@ const Header = () => {
                 href={"/courses"}
               >
                 Programmes
-              </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
-                href={"/admin"}
-              >
-                Admin Registeration/Login
-              </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
-                href={"/admin-dashboard"}
-              >
-                Admin Dashboard
               </Link>
             </div>
           </Drawer>

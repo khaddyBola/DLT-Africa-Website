@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@material-tailwind/react": "^2.1.9",
-    "nodemailer": "^6.9.12"
-  }
-}

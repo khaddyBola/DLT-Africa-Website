@@ -5,7 +5,7 @@ import Link from "next/link";
 const JoinHackerHouse = () => {
   return (
     <>
-      <div className=" font-serif w-[1440px]  bg-[#f5f3f5] bg-opacity-100 py-[54px] px-[54px] ">
+      <div className=" font-serif   bg-[#f5f3f5] bg-opacity-100 py-[54px] px-[54px] ">
         <div className="mx-[50px] flex flex-row justify-between items-center pt-[101px]xcv">
           <div className="flex flex-col justify-center gap-[48px] w-[570px]  ">
             <div className=" text-[48px] font-[400px] gap-[5px] ">

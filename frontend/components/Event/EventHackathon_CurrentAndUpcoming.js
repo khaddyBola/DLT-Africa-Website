@@ -2,7 +2,7 @@ const EventHackathon_CurrentAndUpcoming = () => {
   return (
     <>
       <div className=" max-w-[977px] mx-auto hidden md:block">
-        <div className="bg-[#F6F6F6] border border-gray-700 rounded-xl mx-auto pl-[90px] pr-[52px] py-[20px] ">
+        <div className="bg-[#FFFEFB] border border-gray-700 rounded-xl mx-auto pl-[90px] pr-[52px] py-[20px] ">
           <div className="flex justify-between gap-10  ">
             <div>
               <img src="/images/hackaimg.svg" alt="hack" />
@@ -79,7 +79,7 @@ const EventHackathon_CurrentAndUpcoming = () => {
           </div>
         </div>
 
-        <div className="max-w-xs flex flex-col      items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
+        <div className="max-w-xs flex flex-col items-center gap-4 p-5 rounded-lg border border-orange-300 w-[243px]">
           <img
             className="h-[150px] w-[150px] rounded-full "
             src="https://tinyurl.com/ytcbk3ej"

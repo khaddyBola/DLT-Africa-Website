@@ -6,8 +6,8 @@ const CourseSection = (props) => {
     <>
       <section className="bg-[#F6F7F6] py-8">
         <div className="container mx-auto flex flex-col lg:flex-row">
-          <div className="w-full lg:w-1/2">
-            <div className="px-4 lg:px-[50px]">
+          <div className="w-full lg:w-[673px]">
+            <div>
               <h4 className="text-3xl w-full lg:w-[275px] font-serif font-bold mb-4">
                 {props.title}
               </h4>
@@ -69,9 +69,9 @@ const CourseSection = (props) => {
             </div>
           </div>
 
-          <div className="w-full lg:w-[673px] h-[448px] pt-4 lg:pt-[88px] pb-4 lg:pb-[19px] pl-4 lg:pl-[83px] pr-4 lg:pr-[50px]">
+          <div className="w-full lg:w-[673px] h-[448px] pt-4 lg:pt-[88px] pb-4 lg:pb-[19px] pl-4 lg:pl-[83px]">
             <img
-              className="object-cover h-full w-full rounded-[20px]"
+              className="flex flex-wrap items-center object-cover h-full max-w-full rounded-[20px]"
               src={props.img}
             />
           </div>
@@ -81,4 +81,4 @@ const CourseSection = (props) => {
   );
 };
 
-export default CourseSection;
+export default CourseSection; 

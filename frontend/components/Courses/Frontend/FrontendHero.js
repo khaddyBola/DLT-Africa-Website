@@ -5,7 +5,7 @@ const sectionData = [
   {
     id: 2,
     title: "Front-End Web Development",
-    text: "Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+    text: "Discover the art of web development with our program. Dive into HTML, CSS, JavaScript, and create stunning sites. Real-world projects and expert guidance await you. Start your journey today!",
     headline1: "Graduate in six months, part-time, and start working in the high-demand field of software development.",
     headline2: "Meet regularly with an experienced mentor to ask the questions you care about.",
     headline3: "Build your coding skills and launch your software engineering career",

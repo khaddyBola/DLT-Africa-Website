@@ -16,3 +16,6 @@
 	border-radius: 20px;
   }
  
+  html {
+    scroll-behavior: smooth;
+}

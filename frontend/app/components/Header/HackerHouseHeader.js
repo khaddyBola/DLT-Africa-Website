@@ -78,15 +78,10 @@ const HackerHouseHeader = () => {
               <Link className=" text=[18px] hover:text-[#FC7C13]  " href={"/"}>
                 Home
               </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
-                href={"/hacker-house"}
-              >
-                Hacker House
-              </Link>
+
               <a
                 className="text=[18px] hover:text-[#FC7C13]  "
-                href="https://medium.com/"
+                href="https://medium.com/@DLTAfrica"
               >
                 Blog
               </a>
@@ -95,12 +90,6 @@ const HackerHouseHeader = () => {
                 href={"/team"}
               >
                 Our Team
-              </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
-                href={"/courses"}
-              >
-                Programmes
               </Link>
             </div>
           </Drawer>

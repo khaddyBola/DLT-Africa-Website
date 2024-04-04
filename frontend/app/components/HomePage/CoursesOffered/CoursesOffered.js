@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const CoursesOffered = () => {
   return (
-    <div className="flex flex-col justify-end items-center gap-[90px]  border-b border-black border-opacity-30 bg-green-100 bg-opacity-45 ">
+    <div className="flex flex-col justify-end items-center gap-[90px]  border-b border-black border-opacity-30 bg-green-100 bg-opacity-45 " id="courses">
       <h1 className="text-center pt-[57px] text-black font-dm-serif-display text-[48px] font-normal leading-12 tracking-wide ">
         Courses we offer
       </h1>

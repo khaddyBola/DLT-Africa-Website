@@ -54,12 +54,12 @@ const CourseSection = (props) => {
               )}
 
               <div className="flex flex-col lg:flex-row gap-4 py-4 lg:py-[36px]">
-                <Link href="/training" legacyBehavior={true}>
+                <Link href="/application" legacyBehavior={true}>
                   <a className="bg-[#FC7C13] w-full lg:w-[196px] h-[55px] p-[10px] flex justify-center items-center text-white font-bold rounded-[10px] hover:bg-[#ED6109] hover:text-[#F7FCFE]">
                     Register for Offline
                   </a>
                 </Link>
-                <Link href="/training" legacyBehavior={true}>
+                <Link href="/application" legacyBehavior={true}>
                   <a className="w-full lg:w-[196px] h-[55px] p-[10px] flex justify-center items-center text-[#C54809] font-bold rounded-[10px] hover:bg-[#FFF8ED] border border-solid border-[#C54809]">
                     Register for online
                   </a>

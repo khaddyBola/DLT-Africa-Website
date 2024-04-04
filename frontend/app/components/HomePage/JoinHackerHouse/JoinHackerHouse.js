@@ -1,15 +1,12 @@
 import Image from "next/image";
-import Join from "../../../../public/hero-section.png";
+import Working from "../../../../public/Working.png";
+import Link from "next/link";
 
 const JoinHackerHouse = () => {
   return (
     <>
       <div className=" font-serif w-[1440px]  bg-[#f5f3f5] bg-opacity-100 py-[54px] px-[54px] ">
         <div className="mx-[50px] flex flex-row justify-between items-center pt-[101px]xcv">
-          <div className="">
-            <Image src={Join} />
-          </div>
-
           <div className="flex flex-col justify-center gap-[48px] w-[570px]  ">
             <div className=" text-[48px] font-[400px] gap-[5px] ">
               <div>
@@ -22,9 +19,14 @@ const JoinHackerHouse = () => {
                 velit interdum, ac aliquet odio mattis.
               </div>
             </div>
-            <div className="border border-[#C54809] rounded w-[355px] p-[10px]  text-center font-poppins font-bold text-[#C54809] hover:bg-[white] cursor-pointer ">
-              Read more
-            </div>
+            <Link href="/hacker-house">
+              <div className="border border-[#C54809] rounded w-[355px] p-[10px] text-[16px] text-center font-poppins font-bold text-[#C54809] hover:bg-[white] cursor-pointer">
+                Read more
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Image src={Working} />
           </div>
         </div>
       </div>

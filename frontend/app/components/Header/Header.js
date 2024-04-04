@@ -94,7 +94,7 @@ const Header = () => {
               </svg>
             </div>
 
-            <div className="flex flex-col gap-4 pr-20 items-end  p-[10] ">
+            <div className="flex flex-col gap-4 pr-20 items-end p-[10]">
               <Link
                 className=" text=[18px] hover:text-[#FC7C13]  "
                 href={"/admin-dashboard"}
@@ -105,12 +105,12 @@ const Header = () => {
                 className=" text=[18px] hover:text-[#FC7C13]  "
                 href={"/admin"}
               >
-                Admin Registeration/Login
+                Admin Registration/Login
               </Link>
-              
+
               <a
                 className="text=[18px] hover:text-[#FC7C13]  "
-                href="https://medium.com/"
+                href="https://medium.com/@DLTAfrica"
               >
                 Blog
               </a>
@@ -126,11 +126,8 @@ const Header = () => {
               >
                 Our Team
               </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
-                href={"/courses"}
-              >
-                Programmes
+              <Link className=" text=[18px] hover:text-[#FC7C13]  " href={""}>
+                {/* Programmes */}
               </Link>
             </div>
           </Drawer>

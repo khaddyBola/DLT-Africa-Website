@@ -31,7 +31,7 @@ const CoursesOffered = () => {
               href="/fullstack"
               className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed "
             >
-              Learn full stack development
+              Learn Fullstack Dev
             </Link>
           </div>
         </div>
@@ -52,7 +52,7 @@ const CoursesOffered = () => {
               href="/frontend"
               className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed "
             >
-              Learn front end development
+              Learn frontend dev
             </Link>
           </div>
         </div>

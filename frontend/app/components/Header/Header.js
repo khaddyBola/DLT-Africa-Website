@@ -60,7 +60,7 @@ const Header = () => {
             placement="top"
             open={openTop}
             onClose={closeDrawerTop}
-            className="p-4 min-h-[300px] px-[50px] pb-[400px]"
+            className="p-4 min-h-[300px] px-[50px] pb-[300px] mt-[-20px] "
           >
             <div className="mb-6 flex items-center justify-between ">
               <Link href={"/"}>
@@ -96,37 +96,37 @@ const Header = () => {
 
             <div className="flex flex-col gap-4 pr-20 items-end p-[10]">
               <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
+                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
                 href={"/admin-dashboard"}
               >
                 Admin Dashboard
               </Link>
               <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
+                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
                 href={"/admin"}
               >
                 Admin Registration/Login
               </Link>
 
               <a
-                className="text=[18px] hover:text-[#FC7C13]  "
+                className="text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
                 href="https://medium.com/@DLTAfrica"
               >
                 Blog
               </a>
               <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
+                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
                 href={"/hacker-house"}
               >
                 Hacker House
               </Link>
               <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
+                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
                 href={"/team"}
               >
                 Our Team
               </Link>
-              <Link className=" text=[18px] hover:text-[#FC7C13]  " href={""}>
+              <Link className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 " href={""}>
                 {/* Programmes */}
               </Link>
             </div>

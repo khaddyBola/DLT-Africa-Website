@@ -29,7 +29,7 @@ const Footer = () => {
 
         <div className="  inline-flex items-start gap-[50px]  ">
           <div className=" h-[123px]">
-            <h1 className=" text-[#C54809] font-sans  text-[24px] font-bold leading-normal text-[24px]">
+            <h1 className=" text-[#C54809] font-sans font-bold leading-normal text-[24px]">
               Our Mission
             </h1>
             <p className="text-[#252A24] font-source-sans-pro  font-normal leading-normal text-[18px] w-[259px] ">
@@ -38,7 +38,7 @@ const Footer = () => {
             </p>
           </div>
           <div className=" h-auto min-h-[244px]  ">
-            <h1 className=" text-[#C54809]  font-sans  text-[24px] font-bold leading-normal text-[24px]">
+            <h1 className=" text-[#C54809]  font-sans font-bold leading-normal text-[24px]">
               Contact Us
             </h1>
 
@@ -49,7 +49,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="mb-[21px]">
-              <p className="font-[700] font-[16px] w-[300px] ">
+              <p className="font-[700] text-[16px] w-[300px] ">
                 For more info about our Classes
               </p>
               <p className="">(234)815 650 9701</p>
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
           </div>
           <div className=" ">
-            <h1 className="w-[140px]  text-[#C54809] font-sans font-bold leading-normal text-[24px] ">
+            <h1 className="w-[140px] text-[#C54809] font-sans font-bold leading-normal text-[24px] ">
               Quick Links
             </h1>
             <ul>

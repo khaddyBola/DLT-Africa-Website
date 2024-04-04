@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import DLT from "../../../public/dlt-logo.png";
 
 import {
   FaFacebook,
@@ -10,65 +12,65 @@ import {
 
 const Footer = () => {
   return (
-    <footer className=" h-[469px] bg-[#EFFFE2] flex flex-col items-center justify-center text-[18px]">
-      <div className=" flex flex-row justify-center gap-[50px] mr-[300px] ">
-        <div className="w-auto  h-auto min-h-[80px] flex flex-col items-center  ml-[80px]">
-          <div className="flex flex-col gap-10 mt-[76px] w-[211px] justify-center items-center">
-            <a href="">
+    <footer className=" bg-[#EFFFE2] flex flex-col items-left justify-start text-[18px]  ">
+      <div className=" flex flex-row  gap-[82px] pt-[75px]  ">
+        <div className=" h-[80px] flex flex-col items-center ">
+          <div className="flex flex-col gap-[15px]  w-[211px] justify-center items-center ml-[50px] ">
+            <a href="/">
               {" "}
-              <img
-                src="https://dltafrica.io/static/media/dlt-logo.5ab17ff18a5c4ae8adb1df98544f1f69.svg"
-                alt="logo"
-                className="w-[126px] h-[50.797px] "
-              />
+              <Image src={DLT} alt="logo" className="w-[126px] h-[50.797px] " />
             </a>
 
-            <p className="text-neutral-black font-poppins text-[16px] font-normal leading-[120%] w-[211px] h-[19px] text-center">
+            <p className="text-neutral-black font-poppins text-[16px]  font-normal leading-[120%] w-[211px] h-[19px] text-center">
               Innovating Through web3...
             </p>
           </div>
         </div>
 
-        <div className="w-auto max-w-[800px] h-auto min-h-[244px] inline-flex items-start gap-50  mt-[63px] ml-[150px]">
-          <div className="w-[291px] h-[123px]">
-            <h1 className=" text-[#C54809] font-sans  text-[24px] font-bold leading-normal mb-[21px] text-[24px]">
+        <div className="  inline-flex items-start gap-[50px]  ">
+          <div className=" h-[123px]">
+            <h1 className=" text-[#C54809] font-sans  text-[24px] font-bold leading-normal text-[24px]">
               Our Mission
             </h1>
-            <p className="text-[#252A24] font-source-sans-pro  font-normal leading-normal w-full h-auto min-h-[69px] text-[18px]">
+            <p className="text-[#252A24] font-source-sans-pro  font-normal leading-normal text-[18px] w-[259px] ">
               To help build Web3 talents from ground zero, through full-stack
               and smart contract developments
             </p>
           </div>
-          <div className="w-[264px] h-auto min-h-[244px] ml-[50px]  ">
-            <h1 className=" text-[#C54809] font-sans  text-[24px] font-bold leading-normal mb-[21px] text-[24px]">
+          <div className=" h-auto min-h-[244px]  ">
+            <h1 className=" text-[#C54809]  font-sans  text-[24px] font-bold leading-normal text-[24px]">
               Contact Us
             </h1>
 
             <div>
-              <p className="w-full sm:w-[254px] h-auto min-h-[60px] self-stretch mb-[21px] text-[16px]">
+              <p className=" mb-[21px] text-[16px] w-[259px] ">
                 2, Sheikh Zakariyah Adebayo Yusuf Street, PEGAMUT, 102112, Ota,
                 Ogun State
               </p>
             </div>
             <div className="mb-[21px]">
-              <p className="font-[700] font-[16px] w-[300px]">
+              <p className="font-[700] font-[16px] w-[300px] ">
                 For more info about our Classes
               </p>
-              <p>(234)815 650 9701</p>
+              <p className="">(234)815 650 9701</p>
             </div>
 
             <div className="mb-[21px]">
-              <p className="font-[700]">Email:</p>
-              <a href="mailto:info@dltafrica.io">info@dltafrica.io</a>
+              <p className="font-[700] ">Email:</p>
+              <a href="mailto:info@dltafrica.io" className="">
+                info@dltafrica.io
+              </a>
             </div>
           </div>
-          <div className="w-[145px] h-auto min-h-[165px] ml-[50px]">
-            <h1 className=" text-[#C54809] font-sans  text-[24px] font-bold leading-normal mb-[21px] text-[24px]">
-              Quick Link
+          <div className=" ">
+            <h1 className="w-[140px]  text-[#C54809] font-sans font-bold leading-normal text-[24px] ">
+              Quick Links
             </h1>
             <ul>
-              <li className="mb-[21px]">
-                <a href="/team">Our Team</a>
+              <li className="transition duration-500 ease-in-out transform hover:-translate-y-1 ">
+                <a href="/team" className="">
+                  Our Team
+                </a>
               </li>
             </ul>
           </div>
@@ -76,20 +78,20 @@ const Footer = () => {
       </div>
 
       <div className="flex gap-6 pb-5 justify-center mt-[80px] mb-[42px] ">
-        <a href="#">
-          <FaFacebook className="w-[35px] h-[35px]" />
+        <a href="https://www.facebook.com/share/1C7CRtQDN31XBgVb/?mibextid=LQQJ4d">
+          <FaFacebook className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
-        <a href="#">
-          <FaInstagram className="w-[35px] h-[35px]" />
+        <a href="https://www.instagram.com/dlta_frica/">
+          <FaInstagram className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
-        <a href="#">
-          <FaLinkedin className="w-[35px] h-[35px]" />
+        <a href="https://www.linkedin.com/company/dlt-africa/">
+          <FaLinkedin className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
-        <a href="#">
-          <FaTwitter className="w-[35px] h-[35px]" />
+        <a href="https://twitter.com/dlt_africa">
+          <FaTwitter className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
-        <a href="#">
-          <FaGithub className="w-[35px] h-[35px]" />
+        <a href="https://github.com/DLT-Africa">
+          <FaGithub className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
       </div>
     </footer>

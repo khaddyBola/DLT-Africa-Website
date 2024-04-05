@@ -36,6 +36,22 @@ const initialState = {
 
 const Application = () => {
   const [formData, setFormData] = useState(initialState);
+  const [nigerianStates, setNigerianStates] = useState([]);
+
+  useEffect(() => {
+    const fetchStatesData = async () => {
+      try {
+        const response = await fetch("https://api.facts.ng/v1/states");
+        const data = await response.json();
+        setNigerianStates(data);
+      } catch (error) {
+        console.error("Error fetching Nigerian states:", error);
+      }
+    };
+
+    fetchStatesData();
+  }, []);
+
   const {
     firstName,
     lastName,
@@ -205,25 +221,27 @@ const Application = () => {
                   placeholder="Email Address"
                 />
                 <Select
-                  label="State of Origin"
-                  variant="static"
                   name="stateOfOrigin"
-                  className="pl-4 text-xl"
+				  label="State of Origin"
+                  variant="static"
+                  className="pl-4 text-xl "
                   labelProps={{
                     className: "!text-black",
                   }}
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  // value={value}
-                  // onChange={(val) => setValue(val)}
+                  value={formData.stateOfOrigin}
+                  onChange={handleInputChange}
                 >
-                  <Option value="html">Material Tailwind HTML</Option>
-                  <Option value="react">Material Tailwind React</Option>
-                  <Option value="vue">Material Tailwind Vue</Option>
-                  <Option value="angular">Material Tailwind Angular</Option>
-                  <Option value="svelte">Material Tailwind Svelte</Option>
+                  <Option value="&nbsp;">&nbsp;</Option>
+                  {nigerianStates.map((state) => (
+                    <Option key={state.id} value={state.name}>
+                      {state.name}
+                    </Option>
+                  ))}
                 </Select>
+
                 <Select
                   label="Gender"
                   variant="static"
@@ -287,7 +305,9 @@ const Application = () => {
                   // onChange={(val) => setValue(val)}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
-                  <Option value="ssce">Senior Secondary School Certificate (SSCE)</Option>
+                  <Option value="ssce">
+                    Senior Secondary School Certificate (SSCE)
+                  </Option>
                   <Option value="ond">Ordinary National Diploma (OND)</Option>
                   <Option value="hnd">Higher National Diploma (HND)</Option>
                   <Option value="bsc">BSc</Option>

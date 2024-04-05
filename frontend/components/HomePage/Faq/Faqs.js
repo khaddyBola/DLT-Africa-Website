@@ -69,9 +69,9 @@ const Faqs = () => {
       }}
       className="p-40 "
     >
-      <div className="text-center mb-10 -m-20">
-        <h1 className="text-4xl mb-5">Frequently asked questions</h1>
-        <p className="text-center">
+      <div className="text-center mb-10 -m-20 max-width-[100px]">
+        <h1 className="text-4xl mb-5 sm:text-center sm:mt-[40px] sm:pr-[14px] sm:pl-[14x] sm:text-[28px]">Frequently asked questions</h1>
+        <p className="text-center sm:mt-[10px] sm:pl-[14px] sm:mb-[30px] text-[14px] sm:text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasell <br/>
           lorem. Nam vehicula commodo malesuada. Cras tempus metus id lorem<br/>
           vulputate pellentesque eros et, elementum magna. Aenean convallis

@@ -2,7 +2,7 @@ import React from 'react';
 
 const HackerHouseWorkshop = () => {
   return (
-    <div className="bg-[#031700] w-full h-full top-[22399px] border-[0px 0px 0.5px 0px]">
+    <div className="bg-[#031700] w-full h-full top-[22399px] sm:h-[2740px] md:h-[1810px] border-[0px 0px 0.5px 0px] lg:h-[1710px]">
       <h2 className="Font-DM-Serif-Display text-[#F7FCFE] w-[400] text-[30px] tracking-7% text-center">
         Workshops by
       </h2>

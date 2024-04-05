@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import IconSection from "../IconSection/IconSection";
  import { ImHourGlass } from "react-icons/im";
  import { IoIosApps } from "react-icons/io";
@@ -105,3 +106,16 @@ const ProductDesignIconSection = () => {
 }
 
 export default ProductDesignIconSection
+=======
+import React from 'react'
+
+const ProductDesignIconSection = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default ProductDesignIconSection
+>>>>>>> b3c53479d8e42b5a83a6ef0a784ed85f568d2369

@@ -25,7 +25,7 @@ const Congrats = () => {
         </div>
 
         <div className="w-[724.48px] h-[666.52px] top-[355.17px] left-[333.69px] Border-[2px] Rotation-[-7.47°] absolute">
-            <img src="Vector1.png" alt="Example" />
+            <img src="Vector1.png" alt="Example"/>
         </div>
 
       </div>

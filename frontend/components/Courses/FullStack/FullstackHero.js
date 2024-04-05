@@ -12,7 +12,7 @@ const sectionData = [
   },
 ];
 
-const FrontEndHero= () => {
+const FullStackHero= () => {
   return (
     <section className="course" id="course">
       <>
@@ -36,4 +36,4 @@ const FrontEndHero= () => {
   );
 };
 
-export default FrontEndHero;
+export default FullStackHero;

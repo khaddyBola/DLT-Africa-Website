@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 
 const IconSection = ({
   title,
@@ -12,10 +13,23 @@ const IconSection = ({
   textClass,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isSmallDevice, setIsSmallDevice] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const handleResize = () => {
+      setIsSmallDevice(mediaQuery.matches);
+    };
+    mediaQuery.addListener(handleResize);
+    handleResize(); // Initial check
+    return () => {
+      mediaQuery.removeListener(handleResize);
+    };
+  }, []);
 
   return (
     <div
-      className={`courseCon ${courseConClass}`}
+      className={`courseCon ${courseConClass} `}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -25,13 +39,15 @@ const IconSection = ({
           <span className={`block ${titleClass}`}>{title}</span>
           <h5
             className={`text-sm ${textClass} ${
-              isHovered ? "block" : "hidden"
+              isSmallDevice || isHovered ? "block" : "hidden"
             } `}
           >
             {text}
           </h5>
           <h5
-            className={`text-sm ${textClass} ${isHovered ? "hidden" : "block"}`}
+            className={`text-sm ${textClass} ${
+              isSmallDevice || !isHovered ? "block" : "hidden"
+            }`}
           >
             {text1}
           </h5>

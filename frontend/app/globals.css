@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 
 .mostly-customized-scrollbar::-webkit-scrollbar {
@@ -16,3 +18,7 @@
 	border-radius: 20px;
   }
  
+  html {
+    scroll-behavior: smooth;
+}
+

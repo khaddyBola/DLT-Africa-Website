@@ -75,32 +75,21 @@ const HackerHouseHeader = () => {
             </div>
 
             <div className="flex flex-col gap-4 pr-20 items-end  p-[10]">
-              <Link className=" text=[18px] hover:text-[#FC7C13]  " href={"/"}>
+              <Link className=" text=[18px] hover:text-[#FC7C13]  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" href={"/"}>
                 Home
               </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
-                href={"/hacker-house"}
-              >
-                Hacker House
-              </Link>
+
               <a
-                className="text=[18px] hover:text-[#FC7C13]  "
-                href="https://medium.com/"
+                className="text=[18px] hover:text-[#FC7C13]  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                href="https://medium.com/@DLTAfrica"
               >
                 Blog
               </a>
               <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
+                className=" text=[18px] hover:text-[#FC7C13]  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                 href={"/team"}
               >
                 Our Team
-              </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13]  "
-                href={"/courses"}
-              >
-                Programmes
               </Link>
             </div>
           </Drawer>

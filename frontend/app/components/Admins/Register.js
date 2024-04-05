@@ -1,12 +1,15 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 const Register = () => {
   return (
     <div>
-        <p>Already have an account? Login</p>
+      
+      <p>
+        Already have an account? <Link href="/admin-login">Login</Link>
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

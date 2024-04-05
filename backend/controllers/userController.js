@@ -126,7 +126,10 @@ function sendEmail(firstName, courseSelected, emailAddress, user) {
     from: process.env.EMAIL_USER,
     to: emailAddress,
     subject: "DLT Africa Training Registration Confirmation",
-    html: `<h1>Hello ${firstName},</h1> 
+    html: `
+    <img src="../../frontend/public/dlt-logo.png" width="500" />
+    
+    <h1>Hello ${firstName},</h1> 
 
 
     <p>Thanks for applying for DLT Africa Training to study ${courseSelected}.</p>

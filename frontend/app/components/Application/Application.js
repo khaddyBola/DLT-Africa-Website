@@ -34,26 +34,48 @@ const initialState = {
   emailAddress: "",
   codeExperience: "",
   stateOfResidence: "",
-  checkboxesChecked: {
-    newsletter: false,
-    privacyPolicy: false,
-  },
-  validFields: {
-    firstName: false,
-    lastName: false,
-    dob: false,
-    academicQualification: false,
-    courseSelected: false,
-    classType: false,
-    stateOfOrigin: false,
-    gender: false,
-    phoneNo: false,
-    emailAddress: false,
-    codeExperience: false,
-    stateOfResidence: false,
-    checkboxes: false,
-  },
+ 
 };
+
+const nigerianStates = [
+  { id: 1, tag: "Abia" },
+  { id: 2, tag: "Adamawa" },
+  { id: 3, tag: "Akwa Ibom" },
+  { id: 4, tag: "Anambra" },
+  { id: 5, tag: "Bauchi" },
+  { id: 6, tag: "Bayelsa" },
+  { id: 7, tag: "Benue" },
+  { id: 8, tag: "Borno" },
+  { id: 9, tag: "Cross River" },
+  { id: 10, tag: "Delta" },
+  { id: 11, tag: "Ebonyi" },
+  { id: 12, tag: "Edo" },
+  { id: 13, tag: "Ekiti" },
+  { id: 14, tag: "Enugu" },
+  { id: 15, tag: "Gombe" },
+  { id: 16, tag: "Imo" },
+  { id: 17, tag: "Jigawa" },
+  { id: 18, tag: "Kaduna" },
+  { id: 19, tag: "Kano" },
+  { id: 20, tag: "Katsina" },
+  { id: 21, tag: "Kebbi" },
+  { id: 22, tag: "Kogi" },
+  { id: 23, name: "Kwara" },
+  { id: 24, tag: "Lagos" },
+  { id: 25, tag: "Nasarawa" },
+  { id: 26, tag: "Niger" },
+  { id: 27, tag: "Ogun" },
+  { id: 28, tag: "Ondo" },
+  { id: 29, tag: "Osun" },
+  { id: 30, tag: "Oyo" },
+  { id: 31, tag: "Plateau" },
+  { id: 32, tag: "Rivers" },
+  { id: 33, tag: "Sokoto" },
+  { id: 34, tag: "Taraba" },
+  { id: 35, tag: "Yobe" },
+  { id: 36, tag: "Zamfara" },
+  { id: 37, tag: "Federal Capital Territory" },
+];
 
 const Application = () => {
   const [formData, setFormData] = useState(initialState);
@@ -70,7 +92,16 @@ const Application = () => {
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    let name, value;
+
+    if (e.target) {
+      name = e.target.name;
+      value = e.target.value;
+    } else {
+      name = e.name;
+      value = e.value;
+    }
+
     setFormData({
       ...formData,
       [name]: value,
@@ -222,6 +253,8 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="First Name"
+                  value={firstName}
+                  onChange={handleChange}
                 />
                 <Input
                   size="lg"
@@ -236,6 +269,8 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Last Name"
+                  value={lastName}
+                  onChange={handleChange}
                 />
                 <Input
                   size="lg"
@@ -250,12 +285,13 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Email Address"
+                  value={emailAddress}
+                  onChange={handleChange}
                 />
-                <Input
-                  size="lg"
+                <Select
                   name="stateOfOrigin"
+                  label="State of Origin"
                   variant="static"
-                  label="State Of Origin"
                   className="pl-4 text-xl "
                   labelProps={{
                     className: "!text-black",
@@ -263,8 +299,16 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  placeholder="State Of Origin"
-                />
+                  value={stateOfOrigin}
+                  onChange={handleChange}
+                >
+                  <Option value="&nbsp;">&nbsp;</Option>
+                  {nigerianStates.map((state) => (
+                    <Option key={state.id} value={state.tag}>
+                      {state.tag}
+                    </Option>
+                  ))}
+                </Select>
 
                 <Select
                   label="Gender"
@@ -298,6 +342,8 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   label="Date of Birth"
+                  value={dob}
+                  onChange={handleChange}
                 />
                 <Input
                   size="lg"
@@ -312,6 +358,8 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Phone Number"
+                  value={phoneNo}
+                  onChange={handleChange}
                 />
 
                 <Select
@@ -325,6 +373,8 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
+                  value={academicQualification}
+                  onChange={handleChange}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="ssce">
@@ -348,6 +398,8 @@ const Application = () => {
                       "peer-disabled:text-black peer-disabled:peer-placeholder-shown:text-blue-gray-900",
                   }}
                   placeholder="Course Selected"
+                  value={courseSelected}
+                  onChange={handleChange}
                 />
                 <Select
                   label="Coding Experience"
@@ -360,6 +412,8 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
+                  value={codeExperience}
+                  onChange={handleChange}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="beginner">Beginner</Option>
@@ -377,16 +431,17 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
+                  value={classType}
+                  onChange={handleChange}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="online">Online</Option>
                   <Option value="physical">Physical</Option>
                 </Select>
-                <Input
-                  size="lg"
-                  name="StateOfResidence"
+                <Select
+                  label="State of Residence"
                   variant="static"
-                  label="State Of Residence"
+                  name="stateOfResidence"
                   className="pl-4 text-xl "
                   labelProps={{
                     className: "!text-black",
@@ -394,8 +449,16 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  placeholder="State Of Residence"
-                />
+                  value={stateOfResidence}
+                  onChange={handleChange}
+                >
+                  <Option value="&nbsp;">&nbsp;</Option>
+                  {nigerianStates.map((state) => (
+                    <Option key={state.id} value={state.tag}>
+                      {state.tag}
+                    </Option>
+                  ))}
+                </Select>
               </div>
               <div className="mt-5 flex w-full flex-col gap-3">
                 <List className="flex-col">

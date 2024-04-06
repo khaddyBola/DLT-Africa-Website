@@ -18,6 +18,8 @@ import {
   registerStudent,
   RESET,
 } from "../../../lib/features/application/applicationSlice";
+import { toast } from "react-toastify";
+import { confirmAlert } from "react-confirm-alert";
 
 const initialState = {
   firstName: "",
@@ -34,51 +36,63 @@ const initialState = {
   stateOfResidence: "",
 };
 
-
 const nigerianStates = [
-	{ id: 1, name: 'Abia' },
-	{ id: 2, name: 'Adamawa' },
-	{ id: 3, name: 'Akwa Ibom' },
-	{ id: 4, name: 'Anambra' },
-	{ id: 5, name: 'Bauchi' },
-	{ id: 6, name: 'Bayelsa' },
-	{ id: 7, name: 'Benue' },
-	{ id: 8, name: 'Borno' },
-	{ id: 9, name: 'Cross River' },
-	{ id: 10, name: 'Delta' },
-	{ id: 11, name: 'Ebonyi' },
-	{ id: 12, name: 'Edo' },
-	{ id: 13, name: 'Ekiti' },
-	{ id: 14, name: 'Enugu' },
-	{ id: 15, name: 'Gombe' },
-	{ id: 16, name: 'Imo' },
-	{ id: 17, name: 'Jigawa' },
-	{ id: 18, name: 'Kaduna' },
-	{ id: 19, name: 'Kano' },
-	{ id: 20, name: 'Katsina' },
-	{ id: 21, name: 'Kebbi' },
-	{ id: 22, name: 'Kogi' },
-	{ id: 23, name: 'Kwara' },
-	{ id: 24, name: 'Lagos' },
-	{ id: 25, name: 'Nasarawa' },
-	{ id: 26, name: 'Niger' },
-	{ id: 27, name: 'Ogun' },
-	{ id: 28, name: 'Ondo' },
-	{ id: 29, name: 'Osun' },
-	{ id: 30, name: 'Oyo' },
-	{ id: 31, name: 'Plateau' },
-	{ id: 32, name: 'Rivers' },
-	{ id: 33, name: 'Sokoto' },
-	{ id: 34, name: 'Taraba' },
-	{ id: 35, name: 'Yobe' },
-	{ id: 36, name: 'Zamfara' },
-	{ id: 37, name: 'Federal Capital Territory' }
-  ];
-  
+  { id: 1, tag: "Abia" },
+  { id: 2, tag: "Adamawa" },
+  { id: 3, tag: "Akwa Ibom" },
+  { id: 4, tag: "Anambra" },
+  { id: 5, tag: "Bauchi" },
+  { id: 6, tag: "Bayelsa" },
+  { id: 7, tag: "Benue" },
+  { id: 8, tag: "Borno" },
+  { id: 9, tag: "Cross River" },
+  { id: 10, tag: "Delta" },
+  { id: 11, tag: "Ebonyi" },
+  { id: 12, tag: "Edo" },
+  { id: 13, tag: "Ekiti" },
+  { id: 14, tag: "Enugu" },
+  { id: 15, tag: "Gombe" },
+  { id: 16, tag: "Imo" },
+  { id: 17, tag: "Jigawa" },
+  { id: 18, tag: "Kaduna" },
+  { id: 19, tag: "Kano" },
+  { id: 20, tag: "Katsina" },
+  { id: 21, tag: "Kebbi" },
+  { id: 22, tag: "Kogi" },
+  { id: 23, name: "Kwara" },
+  { id: 24, tag: "Lagos" },
+  { id: 25, tag: "Nasarawa" },
+  { id: 26, tag: "Niger" },
+  { id: 27, tag: "Ogun" },
+  { id: 28, tag: "Ondo" },
+  { id: 29, tag: "Osun" },
+  { id: 30, tag: "Oyo" },
+  { id: 31, tag: "Plateau" },
+  { id: 32, tag: "Rivers" },
+  { id: 33, tag: "Sokoto" },
+  { id: 34, tag: "Taraba" },
+  { id: 35, tag: "Yobe" },
+  { id: 36, tag: "Zamfara" },
+  { id: 37, tag: "Federal Capital Territory" },
+];
 
 const Application = () => {
   const [formData, setFormData] = useState(initialState);
-  
+  const [checkboxesChecked, setCheckboxesChecked] = useState({
+    newsletter: false,
+    privacyPolicy: false,
+  });
+
+  const handleCheckboxChange = (name) => {
+    setCheckboxesChecked({
+      ...checkboxesChecked,
+      [name]: !checkboxesChecked[name],
+    });
+  };
+
+  const allCheckboxesChecked = Object.values(checkboxesChecked).every(
+    (value) => value
+  );
 
   const {
     firstName,
@@ -106,6 +120,10 @@ const Application = () => {
 
   const registerUser = async (e) => {
     e.preventDefault();
+
+    if (!allCheckboxesChecked) {
+      return toast.error("Please accept both checkboxes.");
+    }
 
     if (
       !firstName ||
@@ -149,6 +167,9 @@ const Application = () => {
 
     dispatch(RESET());
   }, [isSuccess, isLoading, dispatch]);
+
+
+  
 
   return (
     <div
@@ -204,7 +225,10 @@ const Application = () => {
           </div>
 
           <div className="mt-5 mb-20 p-4">
-            <form className="w-full   lg:min-w-[75%] 2xl:min-w-[70%] lg:max-w-[75%] 2xl:max-w-[70%]  rounded-2xl bg-[#FFEFD4] py-[69px] px-8 lg:px-[86px] mx-auto ">
+            <form
+              className="w-full   lg:min-w-[75%] 2xl:min-w-[70%] lg:max-w-[75%] 2xl:max-w-[70%]  rounded-2xl bg-[#FFEFD4] py-[69px] px-8 lg:px-[86px] mx-auto "
+              // onSubmit={}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-14">
                 <Input
                   size="lg"
@@ -219,6 +243,8 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="First Name"
+                  onChange={handleInputChange}
+                  value={firstName}
                 />
                 <Input
                   size="lg"
@@ -233,10 +259,12 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Last Name"
+                  onChange={handleInputChange}
+                  value={lastName}
                 />
                 <Input
                   size="lg"
-                  name="email"
+                  name="emailAddress"
                   variant="static"
                   label="Email Address"
                   className="pl-4 text-xl "
@@ -247,11 +275,14 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Email Address"
+                  onChange={handleInputChange}
+                  value={emailAddress}
                 />
-                <Select
+                <Input
+                  size="lg"
                   name="stateOfOrigin"
-				  label="State of Origin"
                   variant="static"
+                  label="State Of Origin"
                   className="pl-4 text-xl "
                   labelProps={{
                     className: "!text-black",
@@ -259,16 +290,11 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  value={formData.stateOfOrigin}
+                  placeholder="State Of Origin"
                   onChange={handleInputChange}
-                >
-                  <Option value="&nbsp;">&nbsp;</Option>
-                  {nigerianStates.map((state) => (
-                    <Option key={state.id} value={state.name}>
-                      {state.name}
-                    </Option>
-                  ))}
-                </Select>
+                  value={stateOfOrigin}
+                />
+                
 
                 <Select
                   label="Gender"
@@ -281,8 +307,8 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  // value={value}
-                  // onChange={(val) => setValue(val)}
+                  onChange={(value) => handleInputChange(value, "gender")}
+                  value={gender}
                 >
                   <Option value="male">Male</Option>
                   <Option value="female">Female</Option>
@@ -301,11 +327,12 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   label="Date of Birth"
-                  // className="text-gray-600"
+                  onChange={handleInputChange}
+                  value={dob}
                 />
                 <Input
                   size="lg"
-                  name="phoneNumber"
+                  name="phoneNo"
                   variant="static"
                   label="Phone Number"
                   className="pl-4 text-xl"
@@ -316,6 +343,8 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Phone Number"
+                  onChange={handleInputChange}
+                  value={phoneNo}
                 />
 
                 <Select
@@ -329,8 +358,10 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  // value={value}
-                  // onChange={(val) => setValue(val)}
+                  onChange={(value) =>
+                    handleInputChange(value, "academicQualification")
+                  }
+                  value={academicQualification}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="ssce">
@@ -346,10 +377,6 @@ const Application = () => {
                   variant="static"
                   className="disabled:bg-transparent pl-4 text-xl disabled:text-blue-gray-300 disabled:border-b "
                   label="Course Selected"
-                  // className="pl-4 text-xl"
-                  // labelProps={{
-                  //   className: "!text-black",
-                  // }}
                   containerProps={{
                     className: "h-14 ",
                   }}
@@ -358,13 +385,13 @@ const Application = () => {
                       "peer-disabled:text-black peer-disabled:peer-placeholder-shown:text-blue-gray-900",
                   }}
                   placeholder="Course Selected"
-                  value={"Fullstack"}
-                  disabled
+                  onChange={handleInputChange}
+                  value={formData.courseSelected}
                 />
                 <Select
                   label="Coding Experience"
                   variant="static"
-                  name="codingExperience"
+                  name="codeExperience"
                   className="pl-4 text-xl "
                   labelProps={{
                     className: "!text-black",
@@ -372,8 +399,10 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  // value={value}
-                  // onChange={(val) => setValue(val)}
+                  onChange={(value) =>
+                    handleInputChange(value, "codeExperience")
+                  }
+                  value={codeExperience}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="beginner">Beginner</Option>
@@ -391,17 +420,18 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  // value={value}
-                  // onChange={(val) => setValue(val)}
+                  onChange={handleInputChange}
+                  value={formData.classType}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="online">Online</Option>
                   <Option value="physical">Physical</Option>
                 </Select>
-                <Select
-                  label="State of Residence"
+                <Input
+                  size="lg"
+                  name="State Of Residence"
                   variant="static"
-                  name="stateOfResidence"
+                  label="State Of Residence"
                   className="pl-4 text-xl "
                   labelProps={{
                     className: "!text-black",
@@ -409,66 +439,56 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-				  value={formData.stateOfResidence}
+                  placeholder="State Of Residence"
                   onChange={handleInputChange}
-                >
-                  <Option value="&nbsp;">&nbsp;</Option>
-                  {nigerianStates.map((state) => (
-                    <Option key={state.id} value={state.name}>
-                      {state.name}
-                    </Option>
-                  ))}
-                </Select>
+                  value={stateOfResidence}
+                />
               </div>
               <div className="mt-5 flex w-full flex-col gap-3">
                 <List className="flex-col">
                   <ListItem className="p-0 hover:bg-transparent">
-                    <label
-                      // htmlFor="horizontal-list-react"
-                      className="flex w-full cursor-pointer items-center  py-2"
-                    >
+                    <label className="flex w-full cursor-pointer items-center  py-2">
                       <ListItemPrefix className="mr-3">
                         <Checkbox
-                          // id="horizontal-list-react"
                           ripple={false}
-                          className="hover:before:opacity-0 bg-white"
-                          containerProps={{
-                            className: "p-0",
-                          }}
+                          containerProps={{ className: "p-0" }}
+                          onChange={() => handleCheckboxChange("newsletter")}
+                          checked={checkboxesChecked.newsletter}
+                          required
                         />
                       </ListItemPrefix>
                       <Typography className="font-normal text-sm text-gray-600">
                         I would like to be kept up to date with new training
-                        programs, events, promotions and marketing.
+                        programs, events, promotions, and marketing.
                       </Typography>
                     </label>
                   </ListItem>
                   <ListItem className="p-0 hover:bg-transparent">
-                    <label
-                      // htmlFor="horizontal-list-vue"
-                      className="flex w-full cursor-pointer items-center py-2"
-                    >
+                    <label className="flex w-full cursor-pointer items-center py-2">
                       <ListItemPrefix className="mr-3">
                         <Checkbox
-                          // id="horizontal-list-vue"
                           ripple={false}
-                          className="hover:before:opacity-0 bg-white"
-                          containerProps={{
-                            className: "p-0",
-                          }}
+                          containerProps={{ className: "p-0" }}
+                          onChange={() => handleCheckboxChange("privacyPolicy")}
+                          checked={checkboxesChecked.privacyPolicy}
+                          required
                         />
                       </ListItemPrefix>
-                      <Typography className=" font-normal text-sm text-gray-600">
+                      <Typography className="font-normal text-sm text-gray-600">
                         By submitting this form, I accept DLT Africa's Privacy
-                        Policy.{" "}
+                        Policy.
                       </Typography>
                     </label>
                   </ListItem>
                 </List>
               </div>
               <Button
-                size="lg"
-                className="capitalize px-16 py-4 mt-5 bg-[#FC7C13]"
+                type="submit"
+                size="large"
+                className={`capitalize px-16 py-4 mt-5 bg-[#FC7C13] ${
+                  !allCheckboxesChecked && "pointer-events-none opacity-50"
+                }`}
+                disabled={!allCheckboxesChecked}
               >
                 Register
               </Button>

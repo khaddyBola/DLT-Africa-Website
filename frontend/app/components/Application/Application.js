@@ -113,10 +113,7 @@ const Application = () => {
 
   const { isLoading, isSuccess, message } = useSelector((state) => state.app);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -167,9 +164,6 @@ const Application = () => {
 
     dispatch(RESET());
   }, [isSuccess, isLoading, dispatch]);
-
-
-  
 
   return (
     <div
@@ -243,8 +237,6 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="First Name"
-                  onChange={handleInputChange}
-                  value={firstName}
                 />
                 <Input
                   size="lg"
@@ -259,8 +251,6 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Last Name"
-                  onChange={handleInputChange}
-                  value={lastName}
                 />
                 <Input
                   size="lg"
@@ -275,8 +265,6 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Email Address"
-                  onChange={handleInputChange}
-                  value={emailAddress}
                 />
                 <Input
                   size="lg"
@@ -291,10 +279,7 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="State Of Origin"
-                  onChange={handleInputChange}
-                  value={stateOfOrigin}
                 />
-                
 
                 <Select
                   label="Gender"
@@ -307,13 +292,12 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  onChange={(value) => handleInputChange(value, "gender")}
-                  value={gender}
                 >
                   <Option value="male">Male</Option>
                   <Option value="female">Female</Option>
                   <Option value="prefer">Prefer Not To Mention</Option>
                 </Select>
+
                 <Input
                   size="lg"
                   name="dob"
@@ -327,8 +311,6 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   label="Date of Birth"
-                  onChange={handleInputChange}
-                  value={dob}
                 />
                 <Input
                   size="lg"
@@ -343,8 +325,6 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Phone Number"
-                  onChange={handleInputChange}
-                  value={phoneNo}
                 />
 
                 <Select
@@ -358,10 +338,7 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  onChange={(value) =>
-                    handleInputChange(value, "academicQualification")
-                  }
-                  value={academicQualification}
+                  
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="ssce">
@@ -385,8 +362,6 @@ const Application = () => {
                       "peer-disabled:text-black peer-disabled:peer-placeholder-shown:text-blue-gray-900",
                   }}
                   placeholder="Course Selected"
-                  onChange={handleInputChange}
-                  value={formData.courseSelected}
                 />
                 <Select
                   label="Coding Experience"
@@ -399,10 +374,6 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  onChange={(value) =>
-                    handleInputChange(value, "codeExperience")
-                  }
-                  value={codeExperience}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="beginner">Beginner</Option>
@@ -420,8 +391,6 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  onChange={handleInputChange}
-                  value={formData.classType}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="online">Online</Option>
@@ -429,7 +398,7 @@ const Application = () => {
                 </Select>
                 <Input
                   size="lg"
-                  name="State Of Residence"
+                  name="StateOfResidence"
                   variant="static"
                   label="State Of Residence"
                   className="pl-4 text-xl "
@@ -440,8 +409,6 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="State Of Residence"
-                  onChange={handleInputChange}
-                  value={stateOfResidence}
                 />
               </div>
               <div className="mt-5 flex w-full flex-col gap-3">

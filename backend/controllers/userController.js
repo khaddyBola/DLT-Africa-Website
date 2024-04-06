@@ -98,13 +98,13 @@ function sendEmail(firstName, courseSelected, emailAddress, user) {
 
   switch(courseSelected) {
     case 'frontend':
-      tuitionFee = 0.4 * 370000;
+      tuitionFee = 0.5 * 370000;
       break;
     case 'fullstack':
-      tuitionFee = 0.4 * 570000;
+      tuitionFee = 0.5 * 570000;
       break;
     case 'product design':
-      tuitionFee = 0.4 * 150000;
+      tuitionFee = 0.5 * 150000;
       break;
     default:
       tuitionFee = 0; 

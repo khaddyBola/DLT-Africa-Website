@@ -2,7 +2,6 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const nodemailer = require("nodemailer");
 
-
 const validateUserInput = (reqBody) => {
   const {
     firstName,
@@ -96,18 +95,18 @@ const registerUser = asyncHandler(async (req, res) => {
 function sendEmail(firstName, courseSelected, emailAddress, user) {
   let tuitionFee;
 
-  switch(courseSelected) {
-    case 'frontend':
+  switch (courseSelected) {
+    case "frontend":
       tuitionFee = 0.5 * 370000;
       break;
-    case 'fullstack':
+    case "fullstack":
       tuitionFee = 0.5 * 570000;
       break;
-    case 'product design':
+    case "product design":
       tuitionFee = 0.5 * 150000;
       break;
     default:
-      tuitionFee = 0; 
+      tuitionFee = 0;
   }
 
   let transporter = nodemailer.createTransport({
@@ -143,7 +142,9 @@ function sendEmail(firstName, courseSelected, emailAddress, user) {
     <p>If you lack basic knowledge of computers, now is the time to start learning.</p>
 
 
-    <p>As part of our requirements to confirm your admission, you are required to make a tuition deposit of #${tuitionFee.toFixed(2)} of the total tuition fee starting from November 20th until December 15th, 2023.</p>
+    <p>As part of our requirements to confirm your admission, you are required to make a tuition deposit of #${tuitionFee.toFixed(
+      2
+    )} of the total tuition fee starting from November 20th until December 15th, 2023.</p>
 
     <p>ONLY those who make the tuition deposit will be considered to have secured a place, and those who have not completed their deposit shall lose their place to other candidates in the pipeline.</p>
 
@@ -247,7 +248,10 @@ const sendPaymentConfirmationEmail = async (
     from: process.env.EMAIL_USER,
     to: emailAddress,
     subject: "Payment Confirmation",
-    html: `<h1>Dear ${firstName},</h1>
+    html: `
+    <img src="../../frontend/public/dlt-logo.png" width="500" />
+
+    <h1>Dear ${firstName},</h1>
 
     <p>We are pleased to inform you that your first payment has been received! This brings you one step closer to unlocking the full potential of our services.</p>
     
@@ -272,6 +276,8 @@ const sendAcceptanceEmail = async (emailAddress, firstName, courseSelected) => {
     to: emailAddress,
     subject: "Application Accepted",
     html: `
+    <img src="../../frontend/public/dlt-logo.png" width="500" />
+    
       <h1>Dear ${firstName},</h1>
   
       <p>We are pleased to inform you that your application has been accepted into DLT Africa Cohort 5.0 for ${courseSelected}! Welcome aboard!</p>

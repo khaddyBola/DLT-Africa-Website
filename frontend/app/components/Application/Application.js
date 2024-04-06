@@ -34,7 +34,6 @@ const initialState = {
   emailAddress: "",
   codeExperience: "",
   stateOfResidence: "",
- 
 };
 
 const nigerianStates = [
@@ -302,10 +301,9 @@ const Application = () => {
                   value={stateOfOrigin}
                   onChange={handleChange}
                 >
-                  <Option value="&nbsp;">&nbsp;</Option>
-                  {nigerianStates.map((state) => (
-                    <Option key={state.id} value={state.tag}>
-                      {state.tag}
+                  {nigerianStates.map(({ id, tag }) => (
+                    <Option key={id} value={tag}>
+                      {tag}
                     </Option>
                   ))}
                 </Select>
@@ -394,10 +392,9 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   labelProps={{
-                    className:
-                      "peer-disabled:text-black peer-disabled:peer-placeholder-shown:text-blue-gray-900",
+                    className: "!text-black",
                   }}
-                  placeholder="Course Selected"
+                  placeholder="frontend or fullstack or product design"
                   value={courseSelected}
                   onChange={handleChange}
                 />
@@ -452,10 +449,9 @@ const Application = () => {
                   value={stateOfResidence}
                   onChange={handleChange}
                 >
-                  <Option value="&nbsp;">&nbsp;</Option>
-                  {nigerianStates.map((state) => (
-                    <Option key={state.id} value={state.tag}>
-                      {state.tag}
+                  {nigerianStates.map(({ id, tag }) => (
+                    <Option key={id} value={tag}>
+                      {tag}
                     </Option>
                   ))}
                 </Select>

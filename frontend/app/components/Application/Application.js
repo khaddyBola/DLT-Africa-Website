@@ -34,47 +34,26 @@ const initialState = {
   emailAddress: "",
   codeExperience: "",
   stateOfResidence: "",
+  checkboxesChecked: {
+    newsletter: false,
+    privacyPolicy: false,
+  },
+  validFields: {
+    firstName: false,
+    lastName: false,
+    dob: false,
+    academicQualification: false,
+    courseSelected: false,
+    classType: false,
+    stateOfOrigin: false,
+    gender: false,
+    phoneNo: false,
+    emailAddress: false,
+    codeExperience: false,
+    stateOfResidence: false,
+    checkboxes: false,
+  },
 };
-
-const nigerianStates = [
-  { id: 1, tag: "Abia" },
-  { id: 2, tag: "Adamawa" },
-  { id: 3, tag: "Akwa Ibom" },
-  { id: 4, tag: "Anambra" },
-  { id: 5, tag: "Bauchi" },
-  { id: 6, tag: "Bayelsa" },
-  { id: 7, tag: "Benue" },
-  { id: 8, tag: "Borno" },
-  { id: 9, tag: "Cross River" },
-  { id: 10, tag: "Delta" },
-  { id: 11, tag: "Ebonyi" },
-  { id: 12, tag: "Edo" },
-  { id: 13, tag: "Ekiti" },
-  { id: 14, tag: "Enugu" },
-  { id: 15, tag: "Gombe" },
-  { id: 16, tag: "Imo" },
-  { id: 17, tag: "Jigawa" },
-  { id: 18, tag: "Kaduna" },
-  { id: 19, tag: "Kano" },
-  { id: 20, tag: "Katsina" },
-  { id: 21, tag: "Kebbi" },
-  { id: 22, tag: "Kogi" },
-  { id: 23, name: "Kwara" },
-  { id: 24, tag: "Lagos" },
-  { id: 25, tag: "Nasarawa" },
-  { id: 26, tag: "Niger" },
-  { id: 27, tag: "Ogun" },
-  { id: 28, tag: "Ondo" },
-  { id: 29, tag: "Osun" },
-  { id: 30, tag: "Oyo" },
-  { id: 31, tag: "Plateau" },
-  { id: 32, tag: "Rivers" },
-  { id: 33, tag: "Sokoto" },
-  { id: 34, tag: "Taraba" },
-  { id: 35, tag: "Yobe" },
-  { id: 36, tag: "Zamfara" },
-  { id: 37, tag: "Federal Capital Territory" },
-];
 
 const Application = () => {
   const [formData, setFormData] = useState(initialState);
@@ -87,6 +66,14 @@ const Application = () => {
     setCheckboxesChecked({
       ...checkboxesChecked,
       [name]: !checkboxesChecked[name],
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
     });
   };
 
@@ -112,8 +99,6 @@ const Application = () => {
   const dispatch = useDispatch();
 
   const { isLoading, isSuccess, message } = useSelector((state) => state.app);
-
-  
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -221,7 +206,7 @@ const Application = () => {
           <div className="mt-5 mb-20 p-4">
             <form
               className="w-full   lg:min-w-[75%] 2xl:min-w-[70%] lg:max-w-[75%] 2xl:max-w-[70%]  rounded-2xl bg-[#FFEFD4] py-[69px] px-8 lg:px-[86px] mx-auto "
-              // onSubmit={}
+              onSubmit={registerUser}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-14">
                 <Input
@@ -292,6 +277,8 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
+                  value={gender}
+                  onChange={handleChange}
                 >
                   <Option value="male">Male</Option>
                   <Option value="female">Female</Option>
@@ -338,7 +325,6 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
                   <Option value="ssce">

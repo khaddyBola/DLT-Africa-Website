@@ -19,7 +19,8 @@ import {
   RESET,
 } from "../../../lib/features/application/applicationSlice";
 import { toast } from "react-toastify";
-import { confirmAlert } from "react-confirm-alert";
+import { useRouter } from "next/router";
+import Confirmation from "@/app/components/Application/Confirmation";
 
 const initialState = {
   firstName: "",
@@ -78,6 +79,66 @@ const nigerianStates = [
 
 const Application = () => {
   const [formData, setFormData] = useState(initialState);
+
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const handleOpenConfirmation = () => {
+    setShowConfirmation(true);
+  };
+
+  const handleCloseConfirmation = () => {
+    setShowConfirmation(false);
+  };
+
+  const handleRegisterUser = async (e) => {
+    e.preventDefault();
+    handleOpenConfirmation();
+  };
+
+  const handleConfirmedRegister = async () => {
+    e.preventDefault();
+
+    if (!allCheckboxesChecked) {
+      return toast.error("Please accept both checkboxes.");
+    }
+
+    if (
+      !firstName ||
+      !lastName ||
+      !dob ||
+      !academicQualification ||
+      !courseSelected ||
+      !classType ||
+      !stateOfOrigin ||
+      !gender ||
+      !phoneNo ||
+      !emailAddress ||
+      !codeExperience ||
+      !stateOfResidence
+    ) {
+      return toast.error("All fields are required");
+    }
+
+    const applicationData = {
+      firstName,
+      lastName,
+      dob,
+      academicQualification,
+      courseSelected,
+      classType,
+      stateOfOrigin,
+      gender,
+      phoneNo,
+      emailAddress,
+      codeExperience,
+      stateOfResidence,
+    };
+
+    console.log(applicationData);
+    await dispatch(registerStudent(applicationData));
+    handleCloseConfirmation();
+  };
+
   const [checkboxesChecked, setCheckboxesChecked] = useState({
     newsletter: false,
     privacyPolicy: false,
@@ -129,52 +190,11 @@ const Application = () => {
   const dispatch = useDispatch();
 
   const { isLoading, isSuccess, message } = useSelector((state) => state.app);
-
-  const registerUser = async (e) => {
-    e.preventDefault();
-
-    if (!allCheckboxesChecked) {
-      return toast.error("Please accept both checkboxes.");
-    }
-
-    if (
-      !firstName ||
-      !lastName ||
-      !dob ||
-      !academicQualification ||
-      !courseSelected ||
-      !classType ||
-      !stateOfOrigin ||
-      !gender ||
-      !phoneNo ||
-      !emailAddress ||
-      !codeExperience ||
-      !stateOfResidence
-    ) {
-      return toast.error("All fields are required");
-    }
-
-    const applicationData = {
-      firstName,
-      lastName,
-      dob,
-      academicQualification,
-      courseSelected,
-      classType,
-      stateOfOrigin,
-      gender,
-      phoneNo,
-      emailAddress,
-      codeExperience,
-      stateOfResidence,
-    };
-
-    // console.log(userData);
-    await dispatch(registerStudent(applicationData));
-  };
+  const router = useRouter()
 
   useEffect(() => {
     if (isSuccess && !isLoading) {
+      router.push("/congratulation");
     }
 
     dispatch(RESET());
@@ -236,7 +256,7 @@ const Application = () => {
           <div className="mt-5 mb-20 p-4">
             <form
               className="w-full   lg:min-w-[75%] 2xl:min-w-[70%] lg:max-w-[75%] 2xl:max-w-[70%]  rounded-2xl bg-[#FFEFD4] py-[69px] px-8 lg:px-[86px] mx-auto "
-              onSubmit={registerUser}
+              onSubmit={handleRegisterUser}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-14">
                 <Input
@@ -505,6 +525,13 @@ const Application = () => {
                 Register
               </Button>
             </form>
+
+            {showConfirmation && (
+              <Confirmation
+                onConfirm={handleConfirmedRegister}
+                onClose={handleCloseConfirmation}
+              />
+            )}
           </div>
         </div>
       </div>

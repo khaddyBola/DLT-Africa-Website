@@ -82,36 +82,22 @@ const Application = () => {
   const [firstName, setFirstName] = useState("");
 const [lastName, setLastName] = useState("");
 const [emailAddress, setEmailAddress] = useState("");
+const [stateOfOrigin, setStateOfOrigin] = useState("");
 
   const [formValidMessage, setFormValidMessage] = useState();
   const [formCompleted, setFormCompleted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormValidMessage("")
-    let name, value;
-  
-    if (e.target) {
-      name = e.target.name;
-      value = e.target.value;
-    } else {
-      name = e.name;
-      value = e.value;
-    }
-  
-    if (name === "firstName") {
-      setFirstName(value);
-    } else if (name === "lastName") {
-      setLastName(value);
-    } else if (name === "emailAddress") {
-      setEmailAddress(value);
-    }
-  
+    setFormValidMessage("");
+    const { name, value } = e.target;
+    console.log(e.target.value)
     setFormData({
       ...formData,
       [name]: value,
     });
   };
+
   
 
   const handleSubmit = (event) => {

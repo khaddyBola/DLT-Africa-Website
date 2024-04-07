@@ -12,30 +12,9 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { FaCheck } from "react-icons/fa6";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  registerStudent,
-  RESET,
-} from "../../../lib/features/application/applicationSlice";
-import { toast } from "react-toastify";
-import { useRouter } from "next/router";
-import Confirmation from "@/app/components/Application/Confirmation";
+import { useState } from "react";
+import axios from "axios";
 
-const initialState = {
-  firstName: "",
-  lastName: "",
-  dob: "",
-  academicQualification: "",
-  courseSelected: "",
-  classType: "",
-  stateOfOrigin: "",
-  gender: "",
-  phoneNo: "",
-  emailAddress: "",
-  codeExperience: "",
-  stateOfResidence: "",
-};
 
 const nigerianStates = [
   { id: 1, tag: "Abia" },
@@ -78,29 +57,79 @@ const nigerianStates = [
 ];
 
 const Application = () => {
-  const [formData, setFormData] = useState(initialState);
-
-  const [showConfirmation, setShowConfirmation] = useState(false);
-
-  const handleOpenConfirmation = () => {
-    setShowConfirmation(true);
-  };
-
-  const handleCloseConfirmation = () => {
-    setShowConfirmation(false);
-  };
-
-  const handleRegisterUser = async (e) => {
-    e.preventDefault();
-    handleOpenConfirmation();
-  };
-
-  const handleConfirmedRegister = async () => {
-    e.preventDefault();
-
-    if (!allCheckboxesChecked) {
-      return toast.error("Please accept both checkboxes.");
+  const [formData, setFormData] = useState(
+    {
+      firstName: "",
+      lastName: "",
+      dob: "",
+      academicQualification: "",
+      courseSelected: "",
+      classType: "",
+      stateOfOrigin: "",
+      gender: "",
+      phoneNo: "",
+      emailAddress: "",
+      codeExperience: "",
+      stateOfResidence: "",
     }
+  );
+  const [checkboxesChecked, setCheckboxesChecked] = useState({
+    newsletter: false,
+    privacyPolicy: false,
+    payment: false,
+  });
+
+  const [firstName, setFirstName] = useState("");
+const [lastName, setLastName] = useState("");
+const [emailAddress, setEmailAddress] = useState("");
+
+  const [formValidMessage, setFormValidMessage] = useState();
+  const [formCompleted, setFormCompleted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setFormValidMessage("")
+    let name, value;
+  
+    if (e.target) {
+      name = e.target.name;
+      value = e.target.value;
+    } else {
+      name = e.name;
+      value = e.value;
+    }
+  
+    if (name === "firstName") {
+      setFirstName(value);
+    } else if (name === "lastName") {
+      setLastName(value);
+    } else if (name === "emailAddress") {
+      setEmailAddress(value);
+    }
+  
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const {
+      firstName,
+      lastName,
+      dob,
+      academicQualification,
+      courseSelected,
+      classType,
+      stateOfOrigin,
+      gender,
+      phoneNo,
+      emailAddress,
+      codeExperience,
+      stateOfResidence,
+    } = formData;
 
     if (
       !firstName ||
@@ -115,35 +144,38 @@ const Application = () => {
       !emailAddress ||
       !codeExperience ||
       !stateOfResidence
-    ) {
-      return toast.error("All fields are required");
+    ){
+      setFormValidMessage(
+        "Oops! required field are not filled. Go back and fill them"
+      );
+      return;
     }
+    setIsSubmitting(true);
 
-    const applicationData = {
-      firstName,
-      lastName,
-      dob,
-      academicQualification,
-      courseSelected,
-      classType,
-      stateOfOrigin,
-      gender,
-      phoneNo,
-      emailAddress,
-      codeExperience,
-      stateOfResidence,
-    };
-
-    console.log(applicationData);
-    await dispatch(registerStudent(applicationData));
-    handleCloseConfirmation();
+    axios
+      .post("http://localhost:5000/register/api/users/studentreg", formData)
+      .then(function (response) {
+        console.log(response.data);
+        console.log(formData)
+        setIsSubmitting(false);
+        setFormCompleted(true);
+      })
+      .catch(function (error) {
+        setIsSubmitting(false);
+        if (error.response && error.response.status == 400) {
+          setFormValidMessage(
+            "Applicant with the same email address already exist"
+          );
+        } else {
+          setFormValidMessage(
+            "Server error unable to process your registration"
+          );
+        }
+      });
   };
 
-  const [checkboxesChecked, setCheckboxesChecked] = useState({
-    newsletter: false,
-    privacyPolicy: false,
-  });
-
+ 
+  
   const handleCheckboxChange = (name) => {
     setCheckboxesChecked({
       ...checkboxesChecked,
@@ -151,54 +183,25 @@ const Application = () => {
     });
   };
 
-  const handleChange = (e) => {
-    let name, value;
-
-    if (e.target) {
-      name = e.target.name;
-      value = e.target.value;
-    } else {
-      name = e.name;
-      value = e.value;
-    }
-
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
   const allCheckboxesChecked = Object.values(checkboxesChecked).every(
     (value) => value
   );
 
-  const {
-    firstName,
-    lastName,
-    dob,
-    academicQualification,
-    courseSelected,
-    classType,
-    stateOfOrigin,
-    gender,
-    phoneNo,
-    emailAddress,
-    codeExperience,
-    stateOfResidence,
-  } = formData;
+  let tuitionFee;
 
-  const dispatch = useDispatch();
-
-  const { isLoading, isSuccess, message } = useSelector((state) => state.app);
-  const router = useRouter()
-
-  useEffect(() => {
-    if (isSuccess && !isLoading) {
-      router.push("/congratulation");
-    }
-
-    dispatch(RESET());
-  }, [isSuccess, isLoading, dispatch]);
+  switch (formData.courseSelected) {
+    case "Frontend":
+      tuitionFee = 370000;
+      break;
+    case "Fullstack":
+      tuitionFee = 570000;
+      break;
+    case "Product Design":
+      tuitionFee = 150000;
+      break;
+    default:
+      tuitionFee = 0;
+  }
 
   return (
     <div
@@ -254,9 +257,11 @@ const Application = () => {
           </div>
 
           <div className="mt-5 mb-20 p-4">
+          {!formCompleted ? (
+
             <form
               className="w-full   lg:min-w-[75%] 2xl:min-w-[70%] lg:max-w-[75%] 2xl:max-w-[70%]  rounded-2xl bg-[#FFEFD4] py-[69px] px-8 lg:px-[86px] mx-auto "
-              onSubmit={handleRegisterUser}
+              onSubmit={handleSubmit}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-14">
                 <Input
@@ -272,7 +277,7 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="First Name"
-                  value={firstName}
+                  value={formData.firstName}
                   onChange={handleChange}
                 />
                 <Input
@@ -288,7 +293,7 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Last Name"
-                  value={lastName}
+                  value={formData.lastName}
                   onChange={handleChange}
                 />
                 <Input
@@ -304,7 +309,7 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Email Address"
-                  value={emailAddress}
+                  value={formData.emailAddress}
                   onChange={handleChange}
                 />
                 <Select
@@ -318,7 +323,7 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  value={stateOfOrigin}
+                  value={formData.stateOfOrigin}
                   onChange={handleChange}
                 >
                   {nigerianStates.map(({ id, tag }) => (
@@ -339,7 +344,7 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  value={gender}
+                  value={formData.gender}
                   onChange={handleChange}
                 >
                   <Option value="male">Male</Option>
@@ -360,7 +365,7 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   label="Date of Birth"
-                  value={dob}
+                  value={formData.dob}
                   onChange={handleChange}
                 />
                 <Input
@@ -376,7 +381,7 @@ const Application = () => {
                     className: "h-14 ",
                   }}
                   placeholder="Phone Number"
-                  value={phoneNo}
+                  value={formData.phoneNo}
                   onChange={handleChange}
                 />
 
@@ -391,7 +396,7 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  value={academicQualification}
+                  value={formData.academicQualification}
                   onChange={handleChange}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
@@ -414,10 +419,11 @@ const Application = () => {
                   labelProps={{
                     className: "!text-black",
                   }}
-                  placeholder="frontend or fullstack or product design"
-                  value={courseSelected}
+                  placeholder="Frontend or Fullstack or Product Design"
+                  value={formData.courseSelected}
                   onChange={handleChange}
                 />
+                <span>Course Fee: #{tuitionFee.toFixed(2)} </span>
                 <Select
                   label="Coding Experience"
                   variant="static"
@@ -429,7 +435,7 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  value={codeExperience}
+                  value={formData.codeExperience}
                   onChange={handleChange}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
@@ -448,7 +454,7 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  value={classType}
+                  value={formData.classType}
                   onChange={handleChange}
                 >
                   <Option value="&nbsp;">&nbsp;</Option>
@@ -466,7 +472,7 @@ const Application = () => {
                   containerProps={{
                     className: "h-14 ",
                   }}
-                  value={stateOfResidence}
+                  value={formData.stateOfResidence}
                   onChange={handleChange}
                 >
                   {nigerianStates.map(({ id, tag }) => (
@@ -512,6 +518,23 @@ const Application = () => {
                       </Typography>
                     </label>
                   </ListItem>
+                  <ListItem className="p-0 hover:bg-transparent">
+                    <label className="flex w-full cursor-pointer items-center py-2">
+                      <ListItemPrefix className="mr-3">
+                        <Checkbox
+                          ripple={false}
+                          containerProps={{ className: "p-0" }}
+                          onChange={() => handleCheckboxChange("payment")}
+                          checked={checkboxesChecked.payment}
+                          required
+                        />
+                      </ListItemPrefix>
+                      <Typography className="font-normal text-sm text-gray-600">
+                        Are you sure you want to apply for this course at the
+                        specified fee of #{tuitionFee.toFixed(2)}
+                      </Typography>
+                    </label>
+                  </ListItem>
                 </List>
               </div>
               <Button
@@ -522,16 +545,27 @@ const Application = () => {
                 }`}
                 disabled={!allCheckboxesChecked}
               >
-                Register
-              </Button>
-            </form>
+              {isSubmitting ? 
+                (<p>Loading...</p>) 
+                :
 
-            {showConfirmation && (
-              <Confirmation
-                onConfirm={handleConfirmedRegister}
-                onClose={handleCloseConfirmation}
-              />
-            )}
+                <span>Register</span> 
+                }
+              </Button>
+              {formValidMessage && (
+                <div className="event-page-registration-error-message">
+                  {formValidMessage}
+                </div>
+              )}
+            </form>
+          ) : (
+            <button
+                onClick={() => setFormCompleted(false)}
+                className="event-page-registration-form-complete-button"
+              >
+                Go Back
+              </button>
+          )}
           </div>
         </div>
       </div>

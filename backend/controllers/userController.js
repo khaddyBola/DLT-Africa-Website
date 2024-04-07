@@ -96,13 +96,13 @@ function sendEmail(firstName, courseSelected, emailAddress, user) {
   let tuitionFee;
 
   switch (courseSelected) {
-    case "frontend":
+    case "Frontend":
       tuitionFee = 0.5 * 370000;
       break;
-    case "fullstack":
+    case "Fullstack":
       tuitionFee = 0.5 * 570000;
       break;
-    case "product design":
+    case "Product Design":
       tuitionFee = 0.5 * 150000;
       break;
     default:

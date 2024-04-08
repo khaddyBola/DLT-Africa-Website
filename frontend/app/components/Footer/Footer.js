@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import DLT from "../../../public/dlt-logo.png";
 
 import {
   FaFacebook,
@@ -17,11 +19,7 @@ const Footer = () => {
           <div className="flex flex-col gap-4  justify-center items-center">
             <a href="">
               {" "}
-              <img
-                src="https://dltafrica.io/static/media/dlt-logo.5ab17ff18a5c4ae8adb1df98544f1f69.svg"
-                alt="logo"
-                className="w-[126px] h-[50.797px] "
-              />
+              <Image src={DLT} alt="logo" className="w-[126px] h-[50.797px] " />
             </a>
 
             <p className="text-neutral-black font-poppins text-sm md:text-lg font-normal leading-[120%]  h-[19px] text-center">
@@ -55,7 +53,7 @@ const Footer = () => {
               <p className="font-bold  ">
                 For more info about our Classes
               </p>
-              <p>(234)815 650 9701</p>
+              <p className="">(234)815 650 9701</p>
             </div>
 
             <div className="mb-[21px] text-sm md:text-lg">
@@ -77,20 +75,20 @@ const Footer = () => {
       </div>
 
       <div className="flex gap-6 pb-5 justify-center mt-[80px] mb-[42px] ">
-        <a href="#">
-          <FaFacebook className="w-[35px] h-[35px]" />
+        <a href="https://www.facebook.com/share/1C7CRtQDN31XBgVb/?mibextid=LQQJ4d">
+          <FaFacebook className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
-        <a href="#">
-          <FaInstagram className="w-[35px] h-[35px]" />
+        <a href="https://www.instagram.com/dlta_frica/">
+          <FaInstagram className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
-        <a href="#">
-          <FaLinkedin className="w-[35px] h-[35px]" />
+        <a href="https://www.linkedin.com/company/dlt-africa/">
+          <FaLinkedin className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
-        <a href="#">
-          <FaTwitter className="w-[35px] h-[35px]" />
+        <a href="https://twitter.com/dlt_africa">
+          <FaTwitter className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
-        <a href="#">
-          <FaGithub className="w-[35px] h-[35px]" />
+        <a href="https://github.com/DLT-Africa">
+          <FaGithub className="w-[35px] h-[35px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
         </a>
       </div>
     </footer>

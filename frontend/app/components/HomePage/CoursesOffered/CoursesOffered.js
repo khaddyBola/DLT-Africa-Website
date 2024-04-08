@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const CoursesOffered = () => {
   return (
-    <div className="flex flex-col justify-end items-center gap-[90px]  border-b border-black border-opacity-30 bg-green-100 bg-opacity-45 ">
+    <div className="flex flex-col justify-end items-center gap-[90px]  border-b border-black border-opacity-30 bg-green-100 bg-opacity-45 " id="courses">
       <h1 className="text-center pt-[57px] text-black font-dm-serif-display text-[48px] font-normal leading-12 tracking-wide ">
         Courses we offer
       </h1>
@@ -31,7 +31,7 @@ const CoursesOffered = () => {
               href="/fullstack"
               className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed "
             >
-              Learn full stack development
+              Learn Fullstack Dev
             </Link>
           </div>
         </div>
@@ -52,7 +52,7 @@ const CoursesOffered = () => {
               href="/frontend"
               className="flex justify-center items-center w-[230px] h-[45px] px-6 rounded-lg border border-orange-700 text-orange-700 hover:bg-orange-100 font-poppins text-base font-medium leading-relaxed "
             >
-              Learn front end development
+              Learn frontend dev
             </Link>
           </div>
         </div>

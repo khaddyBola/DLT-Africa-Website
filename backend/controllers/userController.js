@@ -96,14 +96,17 @@ function sendEmail(firstName, courseSelected, emailAddress, user) {
   let tuitionFee;
 
   switch (courseSelected) {
-    case "Frontend":
+    case "Frontend Development":
       tuitionFee = 0.5 * 370000;
       break;
-    case "Fullstack":
+    case "Full-Stack Development":
       tuitionFee = 0.5 * 570000;
       break;
-    case "Product Design":
+    case "Product UI/UX Design":
       tuitionFee = 0.5 * 150000;
+      break;
+    case "Blockchain Development":
+      tuitionFee = 0;
       break;
     default:
       tuitionFee = 0;
@@ -126,7 +129,6 @@ function sendEmail(firstName, courseSelected, emailAddress, user) {
     to: emailAddress,
     subject: "DLT Africa Training Registration Confirmation",
     html: `
-    <img src="../../frontend/public/dlt-logo.png" width="500" />
     
     <h1>Hello ${firstName},</h1> 
 
@@ -249,7 +251,6 @@ const sendPaymentConfirmationEmail = async (
     to: emailAddress,
     subject: "Payment Confirmation",
     html: `
-    <img src="../../frontend/public/dlt-logo.png" width="500" />
 
     <h1>Dear ${firstName},</h1>
 
@@ -276,7 +277,6 @@ const sendAcceptanceEmail = async (emailAddress, firstName, courseSelected) => {
     to: emailAddress,
     subject: "Application Accepted",
     html: `
-    <img src="../../frontend/public/dlt-logo.png" width="500" />
     
       <h1>Dear ${firstName},</h1>
   

@@ -117,6 +117,12 @@ const Header = () => {
               </a>
               <Link
                 className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
+                href={"/event-creation"}
+              >
+                Create Event
+              </Link>
+              <Link
+                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
                 href={"/hacker-house"}
               >
                 Hacker House

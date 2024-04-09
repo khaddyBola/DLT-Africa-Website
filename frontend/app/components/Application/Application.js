@@ -492,12 +492,7 @@ const Application = () => {
                         <br /> team on your next step of action.
                       </p>
 
-                      <a
-                        href="/"
-                        className="w-[150px] rounded-md bg-[#ffe0c0] text-[#FC7C13] font-poppins text-[18px] font-medium mt-[2rem] inline-block px-4 py-2 cursor-pointer"
-                      >
-                        Go Back
-                      </a>
+                      <Link href="/">Dismiss</Link>
                     </div>
                     <div className="absolute left-[88px] top-[444px]">
                       <Image className="h-[67px] w-[41px]" src={DLT} alt="" />

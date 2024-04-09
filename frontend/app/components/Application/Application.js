@@ -1,11 +1,16 @@
 "use client";
 
+import Image from "next/image";
+import DLT from "../../dlt.png";
+import Vector1 from "../../../public/Vector1.png";
+import Vector2 from "../../../public/Vector2.png";
+
+import Link from "next/link";
+
 import {
   Button,
   Checkbox,
   Input,
-  Option,
-  Select,
   List,
   ListItem,
   ListItemPrefix,
@@ -14,6 +19,7 @@ import {
 import { FaCheck } from "react-icons/fa6";
 import { useState } from "react";
 import axios from "axios";
+import SelectField from "@/app/components/Application/SelectField";
 
 const nigerianStates = [
   { id: 1, tag: "Abia" },
@@ -55,6 +61,38 @@ const nigerianStates = [
   { id: 37, tag: "Federal Capital Territory" },
 ];
 
+const gender = [
+  { id: 1, tag: "Male" },
+  { id: 2, tag: "Female" },
+  { id: 3, tag: "Prefer Not To Mention" },
+];
+
+const academicQual = [
+  { id: 1, tag: "Senior Secondary School Certificate (SSCE)" },
+  { id: 2, tag: "Ordinary National Diploma (OND)" },
+  { id: 3, tag: "Higher National Diploma (HND)" },
+  { id: 4, tag: "BSc" },
+];
+
+const codeExperience = [
+  { id: 1, tag: "Beginner" },
+  { id: 2, tag: "Inter-Mediate" },
+  { id: 3, tag: "Advanced" },
+];
+
+const course = [
+  { id: 1, tag: "Frontend Development" },
+  { id: 2, tag: "Full-Stack Development" },
+  { id: 3, tag: "Product UI/UX Design" },
+  { id: 4, tag: "Blockchain Development" },
+];
+
+const clType = [
+  { id: 1, tag: "Online" },
+  { id: 2, tag: "Physical" },
+];
+
+import Loader from "@/app/components/Application/Loader";
 const Application = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -75,11 +113,6 @@ const Application = () => {
     privacyPolicy: false,
     payment: false,
   });
-
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [emailAddress, setEmailAddress] = useState("");
-  const [stateOfOrigin, setStateOfOrigin] = useState("");
 
   const [formValidMessage, setFormValidMessage] = useState();
   const [formCompleted, setFormCompleted] = useState(false);
@@ -166,21 +199,11 @@ const Application = () => {
     (value) => value
   );
 
-  let tuitionFee;
+  const [tuitionFee, setTuitionFee] = useState(0);
 
-  switch (formData.courseSelected) {
-    case "Frontend":
-      tuitionFee = 370000;
-      break;
-    case "Fullstack":
-      tuitionFee = 570000;
-      break;
-    case "Product Design":
-      tuitionFee = 150000;
-      break;
-    default:
-      tuitionFee = 0;
-  }
+  const handleCourseChange = (value) => {
+    setSelectedCourse(value);
+  };
 
   return (
     <div
@@ -238,7 +261,7 @@ const Application = () => {
           <div className="mt-5 mb-20 p-4">
             {!formCompleted ? (
               <form
-                className="w-full   lg:min-w-[75%] 2xl:min-w-[70%] lg:max-w-[75%] 2xl:max-w-[70%]  rounded-2xl bg-[#FFEFD4] py-[69px] px-8 lg:px-[86px] mx-auto "
+                className="w-full lg:min-w-[75%] 2xl:min-w-[70%] lg:max-w-[75%] 2xl:max-w-[70%]  rounded-2xl bg-[#FFEFD4] py-[69px] px-8 lg:px-[86px] mx-auto "
                 onSubmit={handleSubmit}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-14">
@@ -258,6 +281,12 @@ const Application = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                   />
+                  <SelectField
+                    label="State Of Origin"
+                    name="stateOfOrigin"
+                    handleChange={handleChange}
+                    options={nigerianStates}
+                  />
                   <Input
                     size="lg"
                     name="lastName"
@@ -274,94 +303,13 @@ const Application = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                   />
-                  <Input
-                    size="lg"
-                    name="emailAddress"
-                    variant="static"
-                    label="Email Address"
-                    className="pl-4 text-xl "
-                    labelProps={{
-                      className: "!text-black",
-                    }}
-                    containerProps={{
-                      className: "h-14 ",
-                    }}
-                    placeholder="Email Address"
-                    value={formData.emailAddress}
-                    onChange={handleChange}
-                  />
-                  <Input
-                    size="lg"
-                    name="stateOfOrigin"
-                    variant="static"
-                    label="State Of Origin"
-                    className="pl-4 text-xl "
-                    labelProps={{
-                      className: "!text-black",
-                    }}
-                    containerProps={{
-                      className: "h-14 ",
-                    }}
-                    placeholder="State Of Origin"
-                    value={formData.stateOfOrigin}
-                    onChange={handleChange}
-                  />
-                  {/* <Select
-                  name="stateOfOrigin"
-                  label="State of Origin"
-                  variant="static"
-                  className="pl-4 text-xl "
-                  labelProps={{
-                    className: "!text-black",
-                  }}
-                  containerProps={{
-                    className: "h-14 ",
-                  }}
-                  value={formData.stateOfOrigin}
-                  onChange={handleChange}
-                >
-                  {nigerianStates.map(({ id, tag }) => (
-                    <Option key={id} value={tag}>
-                      {tag}
-                    </Option>
-                  ))}
-                </Select> */}
-
-                  {/* <Select
-                  label="Gender"
-                  variant="static"
-                  name="gender"
-                  className="pl-4 text-xl"
-                  labelProps={{
-                    className: "!text-black",
-                  }}
-                  containerProps={{
-                    className: "h-14 ",
-                  }}
-                  value={formData.gender}
-                  onChange={handleChange}
-                >
-                  <Option value="male">Male</Option>
-                  <Option value="female">Female</Option>
-                  <Option value="prefer">Prefer Not To Mention</Option>
-                </Select> */}
-
-                  <Input
-                    size="lg"
-                    name="gender"
-                    type="text"
-                    variant="static"
-                    className="pl-4 text-xl text-gray-600"
-                    labelProps={{
-                      className: "!text-black",
-                    }}
-                    containerProps={{
-                      className: "h-14 ",
-                    }}
+                  <SelectField
                     label="Gender"
-                    value={formData.gender}
-                    onChange={handleChange}
+                    name="gender"
+                    handleChange={handleChange}
+                    options={gender}
                   />
+
                   <Input
                     size="lg"
                     name="dob"
@@ -378,6 +326,7 @@ const Application = () => {
                     value={formData.dob}
                     onChange={handleChange}
                   />
+
                   <Input
                     size="lg"
                     name="phoneNo"
@@ -390,177 +339,70 @@ const Application = () => {
                     containerProps={{
                       className: "h-14 ",
                     }}
-                    placeholder="Phone Number"
+                    placeholder="+234705746234"
                     value={formData.phoneNo}
                     onChange={handleChange}
                   />
-                  <Input
-                    size="lg"
-                    name="academicQualification"
-                    variant="static"
+
+                  <SelectField
                     label="Academic Qualification"
-                    className="pl-4 text-xl"
+                    name="academicQualification"
+                    handleChange={handleChange}
+                    options={academicQual}
+                  />
+
+                  <Input
+                    size="lg"
+                    name="emailAddress"
+                    variant="static"
+                    label="Email Address"
+                    className="pl-4 text-xl "
                     labelProps={{
                       className: "!text-black",
                     }}
                     containerProps={{
                       className: "h-14 ",
                     }}
-                    placeholder="SSCE, OND, HND, BSc"
-                    value={formData.academicQualification}
+                    placeholder="yourmail@gmail.com"
+                    value={formData.emailAddress}
                     onChange={handleChange}
                   />
 
-                  {/* <Select
-                  label="Academic Qualification"
-                  variant="static"
-                  name="academicQualification"
-                  className="pl-4 text-xl"
-                  labelProps={{
-                    className: "!text-black",
-                  }}
-                  containerProps={{
-                    className: "h-14 ",
-                  }}
-                  value={formData.academicQualification}
-                  onChange={handleChange}
-                >
-                  <Option value="&nbsp;">&nbsp;</Option>
-                  <Option value="ssce">
-                    Senior Secondary School Certificate (SSCE)
-                  </Option>
-                  <Option value="ond">Ordinary National Diploma (OND)</Option>
-                  <Option value="hnd">Higher National Diploma (HND)</Option>
-                  <Option value="bsc">BSc</Option>
-                </Select> */}
-                  <Input
-                    size="lg"
-                    name="courseSelected"
-                    variant="static"
-                    className="disabled:bg-transparent pl-4 text-xl disabled:text-blue-gray-300 disabled:border-b "
+                  <SelectField
                     label="Course Selected"
-                    containerProps={{
-                      className: "h-14 ",
-                    }}
-                    labelProps={{
-                      className: "!text-black",
-                    }}
-                    placeholder="Frontend or Fullstack or Product Design"
-                    value={formData.courseSelected}
-                    onChange={handleChange}
+                    handleChange={handleChange}
+                    name="courseSelected"
+                    options={course}
+                    setTuitionFee={setTuitionFee}
                   />
-                  <span>Course Fee: #{tuitionFee.toFixed(2)} </span>
+                  <span>
+                    Course Fee:{" "}
+                    {typeof tuitionFee === "number"
+                      ? `₦${tuitionFee.toFixed(2)}`
+                      : tuitionFee}
+                  </span>
 
-                  <Input
-                    size="lg"
-                    name="codeExperience"
-                    variant="static"
+                  <SelectField
                     label="Coding Experience"
-                    className="pl-4 text-xl"
-                    labelProps={{
-                      className: "!text-black",
-                    }}
-                    containerProps={{
-                      className: "h-14 ",
-                    }}
-                    placeholder="Beginner, inter-mediate"
-                    value={formData.codeExperience}
-                    onChange={handleChange}
+                    handleChange={handleChange}
+                    name="codeExperience"
+                    options={codeExperience}
+                    setTuitionFee={setTuitionFee}
                   />
 
-                  <Input
-                    size="lg"
+                  <SelectField
+                    label="Class type"
                     name="classType"
-                    variant="static"
-                    label="Class Type"
-                    className="pl-4 text-xl"
-                    labelProps={{
-                      className: "!text-black",
-                    }}
-                    containerProps={{
-                      className: "h-14 ",
-                    }}
-                    placeholder="Online, Physical"
-                    value={formData.classType}
-                    onChange={handleChange}
+                    handleChange={handleChange}
+                    options={clType}
                   />
 
-                  <Input
-                    size="lg"
-                    name="stateOfResidence"
-                    variant="static"
+                  <SelectField
                     label="State Of Residence"
-                    className="pl-4 text-xl"
-                    labelProps={{
-                      className: "!text-black",
-                    }}
-                    containerProps={{
-                      className: "h-14 ",
-                    }}
-                    // placeholder="Online, Physical"
-                    value={formData.stateOfResidence}
-                    onChange={handleChange}
+                    name="stateOfResidence"
+                    handleChange={handleChange}
+                    options={nigerianStates}
                   />
-
-                  {/* <Select
-                  label="Coding Experience"
-                  variant="static"
-                  name="codeExperience"
-                  className="pl-4 text-xl "
-                  labelProps={{
-                    className: "!text-black",
-                  }}
-                  containerProps={{
-                    className: "h-14 ",
-                  }}
-                  value={formData.codeExperience}
-                  onChange={handleChange}
-                >
-                  <Option value="&nbsp;">&nbsp;</Option>
-                  <Option value="beginner">Beginner</Option>
-                  <Option value="inter-mediate">Inter Mediate</Option>
-                  <Option value="advanced">Advanced</Option>
-                </Select> */}
-
-                  {/* <Select
-                  label="Class Type"
-                  variant="static"
-                  name="classType"
-                  className="pl-4 text-xl "
-                  labelProps={{
-                    className: "!text-black",
-                  }}
-                  containerProps={{
-                    className: "h-14 ",
-                  }}
-                  value={formData.classType}
-                  onChange={handleChange}
-                >
-                  <Option value="&nbsp;">&nbsp;</Option>
-                  <Option value="online">Online</Option>
-                  <Option value="physical">Physical</Option>
-                </Select> */}
-
-                  {/* <Select
-                  label="State of Residence"
-                  variant="static"
-                  name="stateOfResidence"
-                  className="pl-4 text-xl "
-                  labelProps={{
-                    className: "!text-black",
-                  }}
-                  containerProps={{
-                    className: "h-14 ",
-                  }}
-                  value={formData.stateOfResidence}
-                  onChange={handleChange}
-                >
-                  {nigerianStates.map(({ id, tag }) => (
-                    <Option key={id} value={tag}>
-                      {tag}
-                    </Option>
-                  ))}
-                </Select> */}
                 </div>
                 <div className="mt-5 flex w-full flex-col gap-3">
                   <List className="flex-col">
@@ -611,9 +453,9 @@ const Application = () => {
                             required
                           />
                         </ListItemPrefix>
-                        <Typography className="font-normal text-sm text-gray-600">
+                        <Typography className="font-normal text-sm text-[#000] ">
                           Are you sure you want to apply for this course at the
-                          specified fee of #{tuitionFee.toFixed(2)}
+                          specified fee of #{tuitionFee.toFixed(2)}?
                         </Typography>
                       </label>
                     </ListItem>
@@ -627,7 +469,7 @@ const Application = () => {
                   }`}
                   disabled={!allCheckboxesChecked}
                 >
-                  {isSubmitting ? <p>Loading...</p> : <span>Register</span>}
+                  {isSubmitting ? <Loader /> : <span>Register</span>}
                 </Button>
                 {formValidMessage && (
                   <div className="event-page-registration-error-message">
@@ -650,12 +492,12 @@ const Application = () => {
                         <br /> team on your next step of action.
                       </p>
 
-                      <button
-                        onClick={() => setFormCompleted(false)}
-                        className="w-[100px] rounded-md bg-[#ffe0c0] text-[#FC7C13] font-poppins text-[20px] font-medium mt-[2rem]"
+                      <a
+                        href="/"
+                        className="w-[150px] rounded-md bg-[#ffe0c0] text-[#FC7C13] font-poppins text-[18px] font-medium mt-[2rem] inline-block px-4 py-2 cursor-pointer"
                       >
                         Go Back
-                      </button>
+                      </a>
                     </div>
                     <div className="absolute left-[88px] top-[444px]">
                       <Image className="h-[67px] w-[41px]" src={DLT} alt="" />

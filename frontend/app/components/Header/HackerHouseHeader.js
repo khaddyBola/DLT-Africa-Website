@@ -34,6 +34,7 @@ const HackerHouseHeader = () => {
               src={Hamburger}
               onClick={openDrawerTop}
               className="cursor-pointer	"
+              alt="icon"
             />
           </div>
           <Drawer

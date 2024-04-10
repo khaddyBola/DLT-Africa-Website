@@ -63,7 +63,7 @@ const Header = () => {
             onClose={closeDrawerTop}
             className="p-4 min-h-[300px] px-[50px] pb-[300px] mt-[-20px] "
           >
-            <div className="mb-6 flex items-center justify-between ">
+            <div className="my-[10px] flex items-center justify-between ">
               <Link href={"/"}>
                 <Image src={dlt} />
               </Link>
@@ -121,21 +121,21 @@ const Header = () => {
               >
                 Create Event
               </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
-                href={"/hacker-house"}
-              >
-                Hacker House
-              </Link>
+              {pathname != "/hacker-house" && (
+                <Link
+                  className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
+                  href={"/hacker-house"}
+                >
+                  Hacker House
+                </Link>
+              )}
               <Link
                 className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
                 href={"/team"}
               >
                 Our Team
               </Link>
-              <Link className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 " href={""}>
-                {/* Programmes */}
-              </Link>
+              
             </div>
           </Drawer>
         </div>

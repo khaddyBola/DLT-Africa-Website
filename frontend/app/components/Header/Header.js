@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { navbarContent } from "../../configs/navbarConfig";
 import Hamburger from "../../../public/Hamburger.png";

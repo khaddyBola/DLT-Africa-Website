@@ -63,7 +63,7 @@ const Header = () => {
             onClose={closeDrawerTop}
             className="p-4 min-h-[300px] px-[50px] pb-[300px] mt-[-20px] "
           >
-            <div className="mb-6 flex items-center justify-between ">
+            <div className="my-[10px] flex items-center justify-between ">
               <Link href={"/"}>
                 <Image src={dlt} />
               </Link>

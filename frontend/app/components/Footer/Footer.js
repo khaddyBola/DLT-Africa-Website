@@ -29,48 +29,51 @@ const Footer = () => {
         </div>
 
         {/* <div className="w-auto  h-auto min-h-[244px] inline-flex items-start gap-50  mt-[63px] "> */}
-          <div className=" h-[123px]">
-            <h1 className=" text-[#C54809] font-sans  font-bold leading-normal mb-[21px] text-lg md:text-2xl">
-              Our Mission
-            </h1>
-            <p className="text-[#252A24] font-source-sans-pro  font-normal leading-normal w-full h-auto min-h-[69px] text-sm md:text-lg">
-              To help build Web3 talents from ground zero, through full-stack
-              and smart contract developments
+        <div className=" h-[123px]">
+          <h1 className=" text-[#C54809] font-sans  font-bold leading-normal mb-[21px] text-lg md:text-2xl">
+            Our Mission
+          </h1>
+          <p className="text-[#252A24] font-source-sans-pro  font-normal leading-normal w-full h-auto min-h-[69px] text-sm md:text-lg">
+            To help build Web3 talents from ground zero, through full-stack and
+            smart contract developments
+          </p>
+        </div>
+        <div className=" h-auto min-h-[244px]  ">
+          <h1 className=" text-[#C54809] font-sans font-bold leading-normal mb-[21px] text-lg md:text-2xl">
+            Contact Us
+          </h1>
+
+          <div>
+            <p className="w-full  h-auto min-h-[60px] self-stretch mb-[21px] text-sm md:text-lg">
+              2, Sheikh Zakariyah Adebayo Yusuf Street, PEGAMUT, 102112, Ota,
+              Ogun State
             </p>
           </div>
-          <div className=" h-auto min-h-[244px]  ">
-            <h1 className=" text-[#C54809] font-sans font-bold leading-normal mb-[21px] text-lg md:text-2xl">
-              Contact Us
-            </h1>
-
-            <div>
-              <p className="w-full  h-auto min-h-[60px] self-stretch mb-[21px] text-sm md:text-lg">
-                2, Sheikh Zakariyah Adebayo Yusuf Street, PEGAMUT, 102112, Ota,
-                Ogun State
-              </p>
-            </div>
-            <div className="mb-[21px] text-sm md:text-lg">
-              <p className="font-bold  ">
-                For more info about our Classes
-              </p>
-              <p className="">(234)815 650 9701</p>
-            </div>
-
-            <div className="mb-[21px] text-sm md:text-lg">
-              <p className="font-bold">Email:</p>
-              <a href="mailto:info@dltafrica.io">info@dltafrica.io</a>
-            </div>
+          <div className="mb-[21px] text-sm md:text-lg">
+            <p className="font-bold  ">For more info about our Classes</p>
+            <p className="">(234)815 650 9701</p>
           </div>
-          <div className=" h-auto min-h-[165px] ">
-            <h1 className=" text-[#C54809] font-sans   font-bold leading-normal mb-[21px] text-lg md:text-2xl">
-              Quick Link
-            </h1>
-            <ul>
-              <li className="mb-[21px] text-sm md:text-lg">
-                <a href="/team">Our Team</a>
-              </li>
-            </ul>
+
+          <div className="mb-[21px] text-sm md:text-lg">
+            <p className="font-bold">Email:</p>
+            <a href="mailto:info@dltafrica.io">info@dltafrica.io</a>
           </div>
+        </div>
+        <div className=" h-auto min-h-[165px] ">
+          <h1 className=" text-[#C54809] font-sans   font-bold leading-normal mb-[21px] text-lg md:text-2xl">
+            Quick Link
+          </h1>
+          <ul>
+            <li className="mb-[21px] text-sm md:text-lg">
+              <a
+                href="/team"
+                className="hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+              >
+                Our Team
+              </a>
+            </li>
+          </ul>
+        </div>
         {/* </div> */}
       </div>
 

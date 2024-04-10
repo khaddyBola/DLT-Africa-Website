@@ -6,8 +6,8 @@ const page = () => {
   return (
     <div>
       <FrontendHero />
-      {/* <FrontendIconSection />
-      <FrontendDetail /> */}
+      <FrontendIconSection />
+      <FrontendDetail />
     </div>
   );
 };

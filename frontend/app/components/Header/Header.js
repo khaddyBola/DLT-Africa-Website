@@ -121,21 +121,21 @@ const Header = () => {
               >
                 Create Event
               </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
-                href={"/hacker-house"}
-              >
-                Hacker House
-              </Link>
+              {pathname != "/hacker-house" && (
+                <Link
+                  className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
+                  href={"/hacker-house"}
+                >
+                  Hacker House
+                </Link>
+              )}
               <Link
                 className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
                 href={"/team"}
               >
                 Our Team
               </Link>
-              <Link className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 " href={""}>
-                {/* Programmes */}
-              </Link>
+              
             </div>
           </Drawer>
         </div>

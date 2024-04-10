@@ -6,13 +6,7 @@ import { navbarContent } from "../../configs/navbarConfig";
 import Hamburger from "../../../public/Hamburger.png";
 import dlt from "../../dlt.png";
 
-import {
-  Drawer,
-  Button,
-  Typography,
-  IconButton,
-} from "@material-tailwind/react";
-import Image from "next/image";
+import { Drawer } from "@material-tailwind/react";
 
 const Header = () => {
   const [openTop, setOpenTop] = useState(false);
@@ -135,7 +129,6 @@ const Header = () => {
               >
                 Our Team
               </Link>
-              
             </div>
           </Drawer>
         </div>

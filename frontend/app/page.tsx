@@ -25,9 +25,9 @@ export default function Home() {
       <WhatYou />
       <RegisterOnline />
       <CoursesOffered />
-      {/* <JoinHackerHouse /> */}
-      {/* <Faqs /> */}
-      {/* <CurrentAndUpcoming /> */}
+      <JoinHackerHouse />
+      <Faqs />
+      <CurrentAndUpcoming />
       <RegisterOffline />
     </div>
   );

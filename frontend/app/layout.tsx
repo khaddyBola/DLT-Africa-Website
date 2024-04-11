@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
 import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
+import CustomHead from "./CustomHead";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
+        <CustomHead/>
         <body className={inter.className}>
           <Header />
           {children}

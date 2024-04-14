@@ -24,7 +24,7 @@ export default function Home() {
       <HeroSection />
       <WhatYou />
       <RegisterOnline />
-      <CoursesOffered />
+      {/* <CoursesOffered /> */}
       <JoinHackerHouse />
       <Faqs />
       <CurrentAndUpcoming />

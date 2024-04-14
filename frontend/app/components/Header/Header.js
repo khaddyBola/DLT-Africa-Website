@@ -112,9 +112,9 @@ const Header = () => {
               </a>
               <Link
                 className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
-                href={"/event-creation"}
+                href={"/event"}
               >
-                Create Event
+                Event
               </Link>
               {pathname != "/hacker-house" && (
                 <Link
@@ -124,11 +124,19 @@ const Header = () => {
                   Hacker House
                 </Link>
               )}
+
               <Link
                 className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
                 href={"/team"}
               >
                 Our Team
+              </Link>
+
+              <Link
+                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
+                href={"/courses"}
+              >
+                Programmes
               </Link>
             </div>
           </Drawer>

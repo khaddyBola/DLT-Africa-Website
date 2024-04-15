@@ -61,7 +61,7 @@ const AdminDashboard = () => {
     const fetchEvents = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/events/event-details"
+          "http://localhost:5000/api/v1/events/get-all-events"
         );
 
         setEventData(response.data);

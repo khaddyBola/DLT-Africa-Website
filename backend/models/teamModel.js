@@ -26,7 +26,7 @@ const teamSchema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
-    default: admin,
+    default: "admin",
   },
   photo: {
     type: String,

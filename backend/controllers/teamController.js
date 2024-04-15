@@ -1,9 +1,7 @@
 const asyncHandler = require("express-async-handler");
-const nodemailer = require("nodemailer");
 const Team = require("../models/teamModel");
 const { generateToken, hashToken } = require("../utils");
 const bcrypt = require("bcryptjs");
-const cryptr = require("cryptr");
 const Token = require("../models/tokenModel");
 const jwt = require("jsonwebtoken");
 

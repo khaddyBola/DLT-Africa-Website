@@ -1,4 +1,4 @@
-import CoursesOffered from "./components/HomePage/CoursesOffered/CoursesOffered";
+
 import CurrentAndUpcoming from "./components/HomePage/CurrentAndUpcoming/CurrentAndUpcoming";
 import Faqs from "./components/HomePage/Faq/Faqs";
 import HeroSection from "./components/HomePage/HeroSection/HeroSection";
@@ -24,7 +24,6 @@ export default function Home() {
       <HeroSection />
       <WhatYou />
       <RegisterOnline />
-      {/* <CoursesOffered /> */}
       <JoinHackerHouse />
       <Faqs />
       <CurrentAndUpcoming />

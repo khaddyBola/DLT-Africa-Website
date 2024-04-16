@@ -168,7 +168,7 @@ const deleteEvent = asyncHandler(async (req, res) => {
     throw new Error("Event not found");
   }
 
-  await event.remove();
+  await event.deleteOne();
   res.status(200).json({
     message: "Event deleted successfully",
   });

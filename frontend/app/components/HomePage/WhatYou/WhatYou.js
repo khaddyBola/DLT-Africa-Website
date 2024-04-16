@@ -38,8 +38,8 @@ const WhatYou = () => {
           md:text-[36px]'
         > Here&apos;s what you&apos;ll get
       </div>
-      <p className='lg:text-[16px] md:text-[14px] mt-[10px] leading-[120%] 
-        text-center text-[#1C1C1C] opacity-[0.75] lg:px-[369px] md:px-[180px] self-center   mb-[90px] md:-w[564px]' 
+      <p className='lg:text-[16px] md:text-[14px] mt-[10px] leading-[120%] p-[50px]
+        text-center text-[#1C1C1C] opacity-[0.75] lg:px-[369px] md:px-[180px] self-center mb-[70px] lg:-w[564px]' 
       > Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         Nunc vulputate libero et velit interdum, ac aliquet odio mattis. 
         Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.

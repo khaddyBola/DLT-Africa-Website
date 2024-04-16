@@ -86,15 +86,14 @@ const teamMember = [
   },
 ];
 
-const backgoundImage =
-  "https://s3-alpha-sig.figma.com/img/30e7/ba92/c51479ec9db1e5601ae0aae5613f39bc?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UO3zPE9bTChfdGKwlcUwVL33ZpwtdldQBQxILTnFZEemkufw55Ze6QiKilY2r35Akpd~2K61p3yPojAM423UK5yIg9W8ZDu1A9Zfku1WzjKp84~96Uxhwdfx5cqvIRSqn4J52VSVv03QUTiQtXYkmtO5ZHfBzj45tBFAOBTgyXqgz8igSRKfdWymye1~QBstRYcnDPsMZDKs~ty-AwnAiGdc4nlJr2vTURScGQ5n8uXRu2-G7GJtoELWPlBDNwCb2LEMKgBNMfRvP4k21HrITmPVUs8WyngXIRvIZQGzJyBtPh6pMasg81aLYl6KuXaH3wDZajLLNcPXL3qEvW4kmA__";
+
 
 const team = () => {
   return (
-    <div className="h-[2135px]">
+    <div >
       <div
         className="mt-[185px] 
-                text-center 
+                text-center
                 mb-[111px] 
                 text-[#441606] 
                 text-[36px] 
@@ -107,13 +106,16 @@ const team = () => {
       </div>
 
       <div
-        className="grid 
-                gap-[68px 73px] 
+        className="flex
+                flex-wrap
+                items-left
+                justify-left
+                gap-[70px] 
                 w-full 
-                px-10 
-                pt-10 
-                md:grid-cols-2 
-                lg:grid-cols-3"
+                px-[50px]
+                pt-[50px]
+                "
+                
       >
         {teamMember.map((member) => (
           <div

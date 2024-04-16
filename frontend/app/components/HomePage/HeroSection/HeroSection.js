@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col-reverse md:flex-row bg-[#F6F7F6] lg:gap-[30px] md:gap-[22.76px] gap-[20px]">
+    <div className="flex flex-col-reverse md:flex-row bg-[#F6F7F6]">
       <div className="lg:w-[448px] md:w-[369px] sm:w-[380px] pl-[50px] lg:mt-[150px] md:mt-[99px] mt-[100px]">
         <h2 className="text-[#1C1C1C] lg:text-[48px] md:text-[36px] sm:text-[28px] leading-[120%] tracking-[3.36px] font-serif">
           Change your career,

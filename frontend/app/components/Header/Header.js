@@ -12,6 +12,17 @@ import { Drawer } from "@material-tailwind/react";
 const Header = () => {
   const [openTop, setOpenTop] = useState(false);
   const [pathname, setPathname] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    setIsLoggedIn(loggedIn === "true");
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn"); // Remove authentication state
+    setIsLoggedIn(false);
+  };
 
   useEffect(() => {
     setPathname(window.location.pathname);
@@ -91,18 +102,30 @@ const Header = () => {
             </div>
 
             <div className="flex flex-col gap-4 pr-20 items-end p-[10]">
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
-                href={"/admin-dashboard"}
-              >
-                Admin Dashboard
-              </Link>
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
-                href={"/admin"}
-              >
-                Admin Registration/Login
-              </Link>
+              {isLoggedIn ? (
+                <>
+                  <Link
+                    className=" text-[13px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
+                    href={"/admin-dashboard"}
+                  >
+                    Admin Dashboard
+                  </Link>
+                  <Link
+                    className=" text-[13px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
+                    href={"/"}
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </Link>
+                </>
+              ) : (
+                <Link
+                  className=" text-[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
+                  href={"/admin"}
+                >
+                  Admin Registration/Login
+                </Link>
+              )}
 
               <a
                 className="text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
@@ -130,13 +153,6 @@ const Header = () => {
                 href={"/team"}
               >
                 Our Team
-              </Link>
-
-              <Link
-                className=" text=[18px] hover:text-[#FC7C13] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
-                href={"/courses"}
-              >
-                Programmes
               </Link>
             </div>
           </Drawer>

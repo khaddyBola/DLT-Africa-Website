@@ -1,32 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import {
-  Button,
-  Checkbox,
-  Input,
-  List,
-  ListItem,
-  ListItemPrefix,
-  Typography,
-} from "@material-tailwind/react";
+import { Button, Input, Typography } from "@material-tailwind/react";
 import Loader from "@/app/components/Application/Loader";
+import AdminDashboard from "./AdminDashboard";
 
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: "",
   });
 
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    if (loggedIn === "true") {
+      setFormCompleted(true);
+    }
+  }, []);
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const { email, password } = formData;
+    const { email } = formData;
 
-    if (!email || !password) {
+    if (!email) {
       setFormValidMessage("Oops! all fields are required");
       return;
     }
@@ -38,18 +36,15 @@ const Login = () => {
         console.log(response.data);
         console.log(formData);
         setIsSubmitting(false);
+        localStorage.setItem("isLoggedIn", "true");
         setFormCompleted(true);
       })
       .catch(function (error) {
         setIsSubmitting(false);
         if (error.response && error.response.status == 400) {
-          setFormValidMessage(
-            "Applicant with the same email address already exist"
-          );
+          setFormValidMessage("Invalid Login Credentials");
         } else {
-          setFormValidMessage(
-            "Server error unable to process your registration"
-          );
+          setFormValidMessage("Server error!");
         }
       });
   };
@@ -71,11 +66,15 @@ const Login = () => {
     <div>
       <div className="mt-5 mb-20 p-4">
         {!formCompleted ? (
+          //lg:min-w-[75%] 2xl:min-w-[70%] lg:max-w-[75%] 2xl:max-w-[70%]
           <form
             onSubmit={handleSubmit}
-            className="w-full lg:min-w-[75%] 2xl:min-w-[70%] lg:max-w-[75%] 2xl:max-w-[70%]  rounded-2xl bg-[#FFEFD4] py-[69px] px-8 lg:px-[86px] mx-auto "
+            className=" w-[700px] rounded-2xl bg-[#FFEFD4] py-[69px] px-8 lg:px-[86px] mx-auto lg:min-w-[65%] 2xl:min-w-[50%] lg:max-w-[65%] 2xl:max-w-[50%] "
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-14">
+            <Typography className="font-normal text-[36px] text-black mb-[39px] text-center ">
+              Login as an Admin
+            </Typography>
+            <div className="grid grid-cols-none md:grid-cols-none gap-y-14 gap-x-14 text-center">
               <Input
                 size="lg"
                 type="email"
@@ -93,31 +92,14 @@ const Login = () => {
                 value={formData.email}
                 onChange={handleChange}
               />
-              <Input
-                type="password"
-                size="lg"
-                name="password"
-                variant="static"
-                label="Password"
-                className="pl-4 text-xl"
-                labelProps={{
-                  className: "!text-black",
-                }}
-                containerProps={{
-                  className: "h-14 ",
-                }}
-                placeholder=""
-                value={formData.password}
-                onChange={handleChange}
-              />
             </div>
 
             <Button
               type="submit"
               size="large"
-              className="capitalize px-16 py-4 mt-5 bg-[#FC7C13] mb-5 "
+              className="capitalize px-16 py-4 bg-[#FC7C13] my-[35px] w-full text-[16px] transition duration-500 ease-in-out transform hover:-translate-y-1 "
             >
-              {isSubmitting ? <Loader /> : <span>Sign In</span>}
+              {isSubmitting ? <p>Loading...</p> : <span>Sign In</span>}
             </Button>
             {formValidMessage && (
               <div className="event-page-registration-error-message">
@@ -134,7 +116,7 @@ const Login = () => {
           </form>
         ) : (
           <div>
-            <Link href="/">Dismiss</Link>
+            <AdminDashboard />
           </div>
         )}
       </div>

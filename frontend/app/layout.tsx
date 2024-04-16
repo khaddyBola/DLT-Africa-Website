@@ -5,9 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
 import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
-import { Provider } from "react-redux";
-import { store } from "@/lib/store";
-import Head from "next/head";
+import CustomHead from "./CustomHead";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,14 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
-        <Provider store={store}>
-          
-          <body className={inter.className}>
-            <Header />
-            {children}
-            <Footer />
-          </body>
-        </Provider>
+        <CustomHead/>
+        <body className={inter.className}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
       </ThemeProvider>
     </html>
   );
